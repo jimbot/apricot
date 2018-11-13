@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+  <div class="ui huge header">
+    Add a project
+  </div>
+  <form action="/projects" method="POST">
+    <input type="text" name="project[title]" value="" placeholder="Title">
+    <br/>
+    <input type="text" name="project[subject]" value="" placeholder="Subject">
+    <input type="text" name="project[location]" value="" placeholder="Location">
+    <br/>
+    <textarea class="projectDesc" name="project[description]"
+      placeholder="Describe your project (500 characters remaining)"
+      rows="9"
+      cols="50"></textarea>
+      <br/>
+    <button>Create</button>
+  </form>
+  <br/>
+</div>
+
+
+<% include ./partials/footer %>

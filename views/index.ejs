@@ -1,0 +1,15 @@
+<% include ./partials/header %>
+
+<h1>Home Page</h1>
+
+<% projects.forEach(function(project){ %>
+  <div>
+    <h2> <%=project.title%> </h2>
+    <p> <%=project.subject%> </p>
+    <p> <%=project.location%> </p>
+    <p> <%=project.description%> </p>
+    <p> <%=project.created%> </p>
+  </div>
+<% }) %>
+
+<% include ./partials/footer %>
