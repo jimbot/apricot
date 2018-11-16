@@ -7,6 +7,7 @@ var express = require("express"),
     passportLocalMongoose = require("passport-local-mongoose");
     // for schemas
     User = require("./models/user");
+    Project = require("./models/project")
 
 var app = express();
 app.set("view engine", "ejs");
@@ -26,17 +27,6 @@ app.use(passport.session());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 passport.use(new LocalStrategy(User.authenticate()));
-
-// MONGOOSE SCHEMAS CONFIG
-var projectSchema = new mongoose.Schema({
-  title: String,
-  subject: String,
-  location: String,
-  description: String,
-  created: {type: Date, default: Date.now}
-});
-
-var Project = mongoose.model("Project", projectSchema);
 
 // RESTFUL ROUTES
 
@@ -103,6 +93,17 @@ app.post("/projects", function(req, res){
       res.render("new");
     } else {
       res.redirect("/projects")
+    }
+  });
+});
+
+// SHOW
+app.get("/projects/:id", function(req, res){
+  Project.findById(req.params.id).populate("comments").exec(function(err, foundProject){
+    if(err){
+      res.redirect("/projects");
+    } else {
+      res.render("show", {project: foundProject});
     }
   });
 });
