@@ -1,19 +1,21 @@
 <% include ./partials/header %>
 
-<h1>More Information Page</h1>
+<div class="ui main text container segment">
+  <h1>More Information Page</h1>
 
-<h2> <%=project.title%> </h2>
-<p> <%=project.subject%> </p>
-<p> <%=project.location%> </p>
-<p> <%=project.description%> </p>
-<p> <%=project.created%> </p>
+  <h2> <%=project.title%> </h2>
+  <p> <%=project.subject%> </p>
+  <p> <%=project.location%> </p>
+  <p> <%=project.description%> </p>
+  <p> <%=project.created.toDateString() %> </p>
 
-<% project.comments.forEach(function(comment){ %>
-  <p>
-    <strong><%= comment.author %></strong> - <%= comment.text %>
-  </p>
-<% }) %>
+  <% project.comments.forEach(function(comment){ %>
+    <p>
+      <strong><%= comment.author %></strong> - <%= comment.text %>
+    </p>
+  <% }) %>
 
-<a href="/projects">back</a>
+  <a href="/projects">back</a>
+</div>
 
 <% include ./partials/footer %>
