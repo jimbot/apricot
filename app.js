@@ -7,7 +7,8 @@ var express = require("express"),
     passportLocalMongoose = require("passport-local-mongoose");
     // for schemas
     User = require("./models/user");
-    Project = require("./models/project")
+    Project = require("./models/project");
+    Comment = require("./models/comment");
 
 var app = express();
 app.set("view engine", "ejs");
@@ -35,7 +36,7 @@ app.get("/projects", function(req, res){
     if(err){
       console.log(err);
     } else {
-      res.render("index", {projects: projects});
+      res.render("projects/index", {projects: projects});
     }
   });
 });
@@ -83,7 +84,7 @@ app.get("/logout", function(req, res){
 // creating projects
 // new ROUTE
 app.get("/projects/new", function(req, res){
-  res.render("new");
+  res.render("projects/new");
 });
 
 // create ROUTE
@@ -103,13 +104,13 @@ app.get("/projects/:id", function(req, res){
     if(err){
       res.redirect("/projects");
     } else {
-      res.render("show", {project: foundProject});
+      res.render("projects/show", {project: foundProject});
     }
   });
 });
 
 app.get("/pinned", function(req, res){
-  res.render("pinned");
+  res.render("projects/pinned");
 });
 
 app.get("/profile", function(req, res){
@@ -120,7 +121,40 @@ app.get("/", function(req, res){
   res.render("landing");
 });
 
+// COMMENTS
+app.get("/projects/:id/comments/new", function(req, res){
+  Project.findById(req.params.id, function(err, project){
+    if(err){
+      console.log(err);
+    } else {
+      res.render("comments/new", {project: project});
+    }
+  });
+});
+
+app.post("/projects/:id/comments", function(req, res){
+  Project.findById(req.params.id, function(err, project){
+    if(err){
+      console.log(err);
+    } else {
+      Comment.create(req.body.comment, function(err, comment){
+        if(err){
+          console.log(err);
+        } else {
+          projects.comments.push(comment);
+          projects.save();
+          res.redirect("/projects/" + project._id);
+        }
+      });
+    }
+  });
+});
+
 //keep at bottom
 app.listen(process.env.PORT || 5000, function(){
   console.log("listening on localhost: 3000");
 });
+// 
+// app.listen(3000, function(){
+//   console.log("listening on localhost: 3000");
+// });
