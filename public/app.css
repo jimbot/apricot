@@ -12,3 +12,12 @@ div {
 ul {
   list-style: none;
 }
+
+.date_commented {
+  font-size: 8pt;
+  color: #505050;
+}
+
+.right {
+  border: none;
+}

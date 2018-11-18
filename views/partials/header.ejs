@@ -8,9 +8,16 @@
   </head>
   <body>
 
-    <ul>
-      <li><a href="/register">Signup</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/logout">Logout</a></li>
-      <li><a href="/projects/new">Add Project</a></li>
-    </ul>
+<div class="ui primary menu">
+  <div class="right menu">
+    <div class="ui secondary menu">
+      <% if(!currentUser){ %>
+        <a class="ui item" href="/register">Signup</a>
+        <a class="ui item" href="/login">Login</a>
+      <% } else { %>
+        <a class="ui item" href="/projects/profile"><%= currentUser.username %></a>
+        <a class="ui item" href="/logout">Logout</a>
+      <% } %>
+    </div>
+  </div>
+</div>
