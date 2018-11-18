@@ -14,7 +14,8 @@ var app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://jc1995:apricot112@ds163013.mlab.com:63013/apricot", {useNewUrlParser: true});
+// mongoose.connect("mongodb://jc1995:apricot112@ds163013.mlab.com:63013/apricot", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/apricot", {useNewUrlParser: true});
 // secret helps encode and decode the session for authentication
 app.use(require("express-session")({
     secret: "project apricot for comp1930",
@@ -141,8 +142,8 @@ app.post("/projects/:id/comments", function(req, res){
         if(err){
           console.log(err);
         } else {
-          projects.comments.push(comment);
-          projects.save();
+          project.comments.push(comment);
+          project.save();
           res.redirect("/projects/" + project._id);
         }
       });
@@ -151,10 +152,10 @@ app.post("/projects/:id/comments", function(req, res){
 });
 
 //keep at bottom
-app.listen(process.env.PORT || 5000, function(){
-  console.log("listening on localhost: 3000");
-});
-// 
-// app.listen(3000, function(){
+// app.listen(process.env.PORT || 5000, function(){
 //   console.log("listening on localhost: 3000");
 // });
+//
+app.listen(3000, function(){
+  console.log("listening on localhost: 3000");
+});
