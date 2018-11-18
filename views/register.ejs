@@ -2,12 +2,13 @@
 
 <h1>Signup Page</h1>
 
-<form action="/register" method="POST">
+<form onsubmit="return myfun()" action="/register" method="POST" name="frm">
   <input type="text" name="username" placeholder="username">
   <br/>
-  <input type="password" name="password" placeholder="password">
+  <input type="password" id="password" value="" name="password" placeholder="new password">
+    <span id="messages"> </span>
   <br/>
-  <input type="password" name="password" placeholder="confirm password">
+    <input type="password" id="passwords" value="" name="password" placeholder="confirm password">
     <br/>
   <button>Submit</button>
 </form>
