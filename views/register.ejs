@@ -5,20 +5,24 @@
     <h1 class="ui header">
       Sign Up
     </h1>
-    <form class="ui form" action="/register" method="POST">
+    <form action="/register" method="POST" class="ui form">
       <div class="field">
         <input type="text" name="username" placeholder="username">
       </div>
       <div class="field">
-        <input type="password" id="password" value="" name="password" placeholder="password">
+        <input type="password" name="password" placeholder="password">
       </div>
       <div class="field">
-        <input type="password" id="passwords" value="" name="password" placeholder="confirm password">
+        <input type="password" name="password" placeholder="confirm password">
       </div>
       <button class="ui submit button">
         Create Account
       </button>
     </form>
+  </div>
+  <br/>
+  <div class="extra">
+      <p style="font-size: 10pt;">Already have an account? <a class="ui item" href="/login">Login</a></p>
   </div>
 </div>
 
