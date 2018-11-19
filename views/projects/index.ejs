@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 
 <% projects.forEach(function(project){ %>
-  <div class="ui main text card container">
+  <div class="ui card container">
     <div class="content">
       <a><i class="right floated thumbtack icon"></i></a>
       <div class="header">
@@ -28,8 +28,35 @@
         <%=project.created.toDateString() %>
       </span>
     </div>
-    <div class="ui bottom attached button">
-      <i class="caret down icon"></i>
+    <div class="ui bottom button">
+      <div class="ui accordion">
+        <div class="title">
+          <i class="caret down icon" style="color:#707070"></i>
+        </div>
+        <div class="content" style="text-align: left; font-weight: normal">
+          <div class="ui vertical segment">
+            <p>update to this post 1.
+              <span class="right floated">
+                1 day ago
+              </span>
+            </p>
+          </div>
+          <div class="ui vertical segment">
+            <p>update to this post 2.
+              <span class="right floated">
+                3 days ago
+              </span>
+            </p>
+          </div>
+          <div class="ui vertical segment">
+            <p>update to this post 3.
+              <span class="right floated">
+                5 days ago
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 <% }) %>

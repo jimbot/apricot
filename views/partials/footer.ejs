@@ -8,5 +8,18 @@
   </ul>
 </nav>
 <br/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/accordion.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.button')
+        .accordion({
+          selector: {
+            trigger: '.title .icon'
+          }
+        });
+      });
+    </script>
   </body>
 </html>

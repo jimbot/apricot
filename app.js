@@ -46,10 +46,10 @@ app.use(commentRoutes);
 
 
 //keep at bottom
-app.listen(process.env.PORT || 5000, function(){
-  console.log("listening on localhost: 3000");
-});
-//
-// app.listen(3000, function(){
+// app.listen(process.env.PORT || 5000, function(){
 //   console.log("listening on localhost: 3000");
 // });
+//
+app.listen(3000, function(){
+  console.log("listening on localhost: 3000");
+});
