@@ -1,8 +1,30 @@
 <% include ./partials/header %>
 
-<h1>Signup Page</h1>
+<div class="ui main text container segment">
+  <div class="ui form">
+    <h1 class="ui header">
+      Sign Up
+    </h1>
+    <form class="ui form" action="/register" method="POST">
+      <div class="field">
+        <input type="text" name="username" placeholder="username">
+      </div>
+      <div class="field">
+        <input type="password" id="password" value="" name="password" placeholder="password">
+      </div>
+      <div class="field">
+        <input type="password" id="passwords" value="" name="password" placeholder="confirm password">
+      </div>
+      <button class="ui submit button">
+        Create Account
+      </button>
+    </form>
+  </div>
+</div>
 
-<form onsubmit="return myfun()" action="/register" method="POST" name="frm">
+
+
+<!-- <form onsubmit="return myfun()" action="/register" method="POST" name="frm">
   <div class="ui divider"></div>
   <input type="text" name="username" placeholder="username">
   <div class="ui divider"></div>
@@ -13,6 +35,6 @@
     <div class="ui divider"></div>
   <button>Submit</button>
   <div class="ui divider"></div>
-</form>
+</form> -->
 
 <% include ./partials/footer %>
