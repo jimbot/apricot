@@ -1,49 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Apricot</title>
-    <link rel="stylesheet" type="text/css" href="/app.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-  </head>
-  <body>
-  <script>
-          function myfun(){
-              var a=document.getElementById("password").value;
-              var b=document.getElementById("passwords").value;
-              if(a==""){
-                  document.getElementById("messages").innerHTML="**Please fill passowrd";
-                  return false;
-              }
-              if(a.length<=8){
-                  document.getElementById("messages").innerHTML="**Passowrd must be 8 characters"
-                  return false;
-              }
-              if(a.length>20){
-                  document.getElementById("messages").innerHTML="**Passowrd must be less than 20 characters"
-                  return false;
-              }
-              if(a!=b){
-                  document.getElementById("messages").innerHTML="**Passowrd not matching";
-                  return false;
-              }
-               
-          }
-          
-          
-          
-      </script>
 
-<div class="ui primary menu">
-  <div class="right menu">
-    <div class="ui secondary menu">
-      <% if(!currentUser){ %>
+<head>
+  <meta charset="utf-8">
+  <title>Apricot</title>
+  <link rel="stylesheet" type="text/css" href="/app.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+
+<body>
+  <script>
+    function myfun() {
+      var a = document.getElementById("password").value;
+      var b = document.getElementById("passwords").value;
+      if (a == "") {
+        document.getElementById("messages").innerHTML = "**Please fill passowrd";
+        return false;
+      }
+      if (a.length <= 8) {
+        document.getElementById("messages").innerHTML = "**Passowrd must be 8 characters"
+        return false;
+      }
+      if (a.length > 20) {
+        document.getElementById("messages").innerHTML = "**Passowrd must be less than 20 characters"
+        return false;
+      }
+      if (a != b) {
+        document.getElementById("messages").innerHTML = "**Passowrd not matching";
+        return false;
+      }
+
+    }
+
+
+
+  </script>
+
+  <div class="ui primary menu">
+    <div class="left menu">
+      <div class="ui secondary menu">
+        <a class="item" href="/projects">Logo</a>
+        <a class="item" href="/projects/pinned">Pinned</a>
+        <a class="item" href="/projects/profile">Profile</a>
+      </div>
+    </div>
+    <div class="right menu">
+      <div id="searchBar" class="item">
+        <div class="ui icon input">
+          <input type="text" placeholder="Search...">
+          <i class="search link icon"></i>
+        </div>
+      </div>
+      <div class="ui secondary menu">
+        <% if(!currentUser){ %>
         <a class="ui item" href="/register">Signup</a>
         <a class="ui item" href="/login">Login</a>
-      <% } else { %>
-        <a class="ui item" href="/projects/profile"><%= currentUser.username %></a>
+        <% } else { %>
+        <a class="ui item" href="/projects/profile">
+          <%= currentUser.username %></a>
         <a class="ui item" href="/logout">Logout</a>
-      <% } %>
+        <% } %>
+      </div>
     </div>
   </div>
-</div>
+
+</body>
+
+</html>
