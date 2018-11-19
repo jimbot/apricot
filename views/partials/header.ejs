@@ -14,19 +14,19 @@
       var a = document.getElementById("password").value;
       var b = document.getElementById("passwords").value;
       if (a == "") {
-        document.getElementById("messages").innerHTML = "**Please fill passowrd";
+        document.getElementById("messages").innerHTML = "**Please enter your password**";
         return false;
       }
       if (a.length <= 8) {
-        document.getElementById("messages").innerHTML = "**Passowrd must be 8 characters"
+        document.getElementById("messages").innerHTML = "**Password must be 8 or more characters**"
         return false;
       }
       if (a.length > 20) {
-        document.getElementById("messages").innerHTML = "**Passowrd must be less than 20 characters"
+        document.getElementById("messages").innerHTML = "**Password must be less than 20 characters**"
         return false;
       }
       if (a != b) {
-        document.getElementById("messages").innerHTML = "**Passowrd not matching";
+        document.getElementById("messages").innerHTML = "**Passwords do not match**";
         return false;
       }
 
