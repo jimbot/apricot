@@ -4,12 +4,16 @@
   <div class="content">
     <a><i class="right floated thumbtack icon"></i></a>
     <div class="header">
-      <h2 class="ui header"><%=project.title%></h2>
+      <h2 class="ui header">
+        <%=project.title%>
+      </h2>
     </div>
     <div class="meta">
-      <a><%=project.subject%></a>
-      <br/>
-      <a><%=project.location%></a>
+      <a>
+        <%=project.subject%></a>
+      <br />
+      <a>
+        <%=project.location%></a>
     </div>
     <div class="description">
       <p>
@@ -19,7 +23,7 @@
   </div>
   <div class="extra content">
     <span class="left floated">
-      <a href="/projects" >
+      <a href="/projects">
         back
       </a>
     </span>
@@ -73,13 +77,14 @@
         </form>
       </div>
 
-      <br/>
+      <br />
 
-    <div class="content">
-      <% project.comments.reverse().forEach(function(comment){ %>
+      <div class="content">
+        <% project.comments.reverse().forEach(function(comment){ %>
         <div class="comment">
           <div class="content">
-            <a class="author"><%= comment.author.username %></a>
+            <a class="author">
+              <%= comment.author.username %></a>
             <div class="metadata date_commented">
               <span class="date">2 hours ago</span>
             </div>
@@ -88,8 +93,8 @@
             </div>
           </div>
         </div>
-      <% }) %>
-    </div>
+        <% }) %>
+      </div>
 
 
     </div>

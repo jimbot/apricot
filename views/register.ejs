@@ -8,15 +8,15 @@
     <p id="welcome">Create an account to start collaborating with people in your community</p>
     <form action="/register" method="POST" class="ui form">
       <div class="field">
-          <div class="two fields">
-            <div class="field">
-              <input type="text" name="" placeholder="First Name" required>
-            </div>
-            <div class="field">
-              <input type="text" name="" placeholder="Last Name" required>
-            </div>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="" placeholder="First Name" required>
+          </div>
+          <div class="field">
+            <input type="text" name="" placeholder="Last Name" required>
           </div>
         </div>
+      </div>
       <div class="field">
         <input type="text" name="username" placeholder="Username or Email" required>
       </div>
@@ -24,33 +24,23 @@
         <input type="password" name="password" placeholder="Password" min="6" required>
       </div>
       <div class="field">
-          <div class="ui checkbox">
-            <input type="checkbox" required>
-            <label>I agree to the Terms and Conditions</label>
-          </div>
+        <div class="ui checkbox">
+          <input type="checkbox" required>
+          <label>I agree to the Terms and Conditions</label>
         </div>
+      </div>
       <button class="ui primary submit button">
         Create Account
       </button>
     </form>
   </div>
-  <br/>
+  <br />
   <div class="extra">
-      <p style="font-size: 10pt;">Already have an account? <a class="ui item" href="/login">Login</a></p>
+    <p style="font-size: 10pt;">Already have an account? <a class="ui item" href="/login">Login</a></p>
   </div>
 </div>
 
 <!-- <form onsubmit="return myfun()" action="/register" method="POST" name="frm">
-  <div class="ui divider"></div>
-  <input type="text" name="username" placeholder="username">
-  <div class="ui divider"></div>
-  <input type="password" id="password" value="" name="password" placeholder="new password">
-    <span id="messages"> </span>
-    <div class="ui divider"></div>
-    <input type="password" id="passwords" value="" name="password" placeholder="confirm password">
-    <div class="ui divider"></div>
-  <button>Submit</button>
-  <div class="ui divider"></div>
 </form> -->
 
 <% include ./partials/footer %>

@@ -53,6 +53,10 @@ a.item {
   color: red;
 }
 
+.ui.menu .item>.input input {
+  border-radius: 2em;
+}
+
 /* SELECT */
 
 select {

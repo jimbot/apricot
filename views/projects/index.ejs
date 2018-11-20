@@ -1,70 +1,74 @@
 <% include ../partials/header %>
 
 <% projects.reverse().forEach(function(project){ %>
-  <div class="ui card container">
-    <div class="content">
-      <a><i class="right floated thumbtack icon"></i></a>
-      <div class="header">
-        <h2 class="ui header"><%=project.title%></h2>
-      </div>
-      <div class="meta">
-        <a><%=project.subject%></a>
-        <br/>
-        <a><%=project.location%></a>
-      </div>
-      <div class="description">
-        <p>
-          <%=project.description%>
-        </p>
-      </div>
+<div class="ui card container">
+  <div class="content">
+    <a><i class="right floated thumbtack icon"></i></a>
+    <div class="header">
+      <h2 class="ui header">
+        <%=project.title%>
+      </h2>
     </div>
-    <div class="extra content">
-      <span class="left floated">
-        <a href="/projects/<%=project._id%>" >
-          <i class="comment icon"></i>
-        </a>
-      </span>
-      <span class="right floated">
-        <%=project.created.toDateString() %>
-      </span>
+    <div class="meta">
+      <a>
+        <%=project.subject%></a>
+      <br />
+      <a>
+        <%=project.location%></a>
     </div>
-    <div class="ui bottom button">
-      <div class="ui accordion">
-        <div class="title">
-          <i class="caret down icon" style="color:#707070"></i>
+    <div class="description">
+      <p>
+        <%=project.description%>
+      </p>
+    </div>
+  </div>
+  <div class="extra content">
+    <span class="left floated">
+      <a href="/projects/<%=project._id%>">
+        <i class="comment icon"></i>
+      </a>
+    </span>
+    <span class="right floated">
+      <%=project.created.toDateString() %>
+    </span>
+  </div>
+  <div class="ui bottom button">
+    <div class="ui accordion">
+      <div class="title">
+        <i class="caret down icon" style="color:#707070"></i>
+      </div>
+      <div class="content" style="text-align: left; font-weight: normal">
+        <div class="ui vertical segment">
+          <p>update to this post 1.
+            <span class="right floated">
+              1 day ago
+            </span>
+          </p>
         </div>
-        <div class="content" style="text-align: left; font-weight: normal">
-          <div class="ui vertical segment">
-            <p>update to this post 1.
-              <span class="right floated">
-                1 day ago
-              </span>
-            </p>
-          </div>
-          <div class="ui vertical segment">
-            <p>update to this post 2.
-              <span class="right floated">
-                3 days ago
-              </span>
-            </p>
-          </div>
-          <div class="ui vertical segment">
-            <p>update to this post 3.
-              <span class="right floated">
-                5 days ago
-              </span>
-            </p>
-          </div>
+        <div class="ui vertical segment">
+          <p>update to this post 2.
+            <span class="right floated">
+              3 days ago
+            </span>
+          </p>
+        </div>
+        <div class="ui vertical segment">
+          <p>update to this post 3.
+            <span class="right floated">
+              5 days ago
+            </span>
+          </p>
         </div>
       </div>
     </div>
   </div>
+</div>
 <% }) %>
 
 <% if(currentUser){ %>
-  <a href="/projects/new">
-    <i class="plus circle icon"></i>
-  </a>
+<a href="/projects/new">
+  <i class="plus circle icon"></i>
+</a>
 <% } %>
 
 <% include ../partials/footer %>

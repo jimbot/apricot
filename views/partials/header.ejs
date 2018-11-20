@@ -43,39 +43,39 @@
 
   </script> -->
 
-<div class="ui primary menu">
-  <div class="ui container">
+  <div class="ui primary menu">
+    <div class="ui container">
 
 
-    <div class="left menu">
-      <div class="ui secondary menu">
-        <% if(!currentUser){ %>
+      <div class="left menu">
+        <div class="ui secondary menu">
+          <% if(!currentUser){ %>
           <a class="item" href="/">Logo</a>
-        <% } else { %>
+          <% } else { %>
           <a class="item" href="/projects">Logo</a>
-        <% } %>
-      </div>
-    </div>
-    <div class="right menu">
-      <div id="searchBar" class="item">
-        <div class="ui small icon input">
-          <input type="text" placeholder="Search for project...">
-          <i class="search link icon"></i>
+          <% } %>
         </div>
       </div>
-      <div class="ui secondary menu">
-        <% if(!currentUser){ %>
-        <a class="ui item" href="/register">Signup</a>
-        <a class="ui item" href="/login">Login</a>
-        <% } else { %>
-        <a class="ui item" href="/profile">
-          <%= currentUser.username %></a>
-        <a class="ui item" href="/logout">Logout</a>
-        <% } %>
+      <div class="right menu">
+        <div id="searchBar" class="item">
+          <div class="ui small icon input">
+            <input type="text" placeholder="Search for project...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <div class="ui secondary menu">
+          <% if(!currentUser){ %>
+          <a class="ui item" href="/register">Signup</a>
+          <a class="ui item" href="/login">Login</a>
+          <% } else { %>
+          <a class="ui item" href="/profile">
+            <%= currentUser.username %></a>
+          <a class="ui item" href="/logout">Logout</a>
+          <% } %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </body>
 
