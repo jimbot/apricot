@@ -1,3 +1,29 @@
 div.ui.card.container {
   width: 40%;
 }
+
+div.ui.main.text.container.segment.log_reg_box {
+  width: 30%;
+  padding: 2.5%;
+}
+
+div.ui.primary.menu {
+  padding: 0 20px 0 20px;
+  margin-bottom: 40px;
+}
+
+div.ui.card.container {
+  margin-bottom: 25px;
+}
+
+div.ui.bottom.button:hover {
+  background-color: #DCDCDC;
+}
+
+i.plus.circle.icon {
+  padding: 5px;
+  bottom: 3%;
+  position: fixed;
+  font-size: 30pt;
+  left: 93%;
+}

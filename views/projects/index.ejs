@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 
-<% projects.forEach(function(project){ %>
+<% projects.reverse().forEach(function(project){ %>
   <div class="ui card container">
     <div class="content">
       <a><i class="right floated thumbtack icon"></i></a>
@@ -60,5 +60,11 @@
     </div>
   </div>
 <% }) %>
+
+<% if(currentUser){ %>
+  <a href="/projects/new">
+    <i class="plus circle icon"></i>
+  </a>
+<% } %>
 
 <% include ../partials/footer %>
