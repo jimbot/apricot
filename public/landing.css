@@ -1,0 +1,17 @@
+div.ui.large.top.fixed.menu {
+  padding-top: 10px;
+  box-shadow: none;
+  border: none;
+}
+
+a.ui.primary.button {
+  border-radius: 2em;
+}
+
+.ui.menu .item:before {
+    background: #fff !important;
+}
+
+a.item {
+  border-left: #fff !important;
+}

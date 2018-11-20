@@ -3,13 +3,13 @@ div.ui.card.container {
 }
 
 div.ui.main.text.container.segment.log_reg_box {
-  width: 30%;
-  padding: 2%;
+  width: 450px;
+  padding: 20px;
 }
 
 div.ui.primary.menu {
-  padding: 0 20px 0 20px;
   margin-bottom: 40px;
+  padding: 5px;
 }
 
 div.ui.card.container {
@@ -30,4 +30,20 @@ i.plus.circle.icon {
 
 #welcome {
   font-size: 12pt;
+}
+
+button.ui.primary.submit.button {
+  border-radius: 2em;
+}
+
+.ui.menu .item:before {
+    background: #fff !important;
+}
+
+a.item {
+  border-left: #fff !important;
+}
+
+.ui.input>input {
+  border-radius: 2em !important;
 }
