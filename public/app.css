@@ -57,6 +57,14 @@ a.item {
   border-radius: 2em;
 }
 
+div.ui.label {
+  background-color: #fff;
+}
+
+div.ui.label:hover {
+  color: rgb(65, 131, 196);
+}
+
 /* SELECT */
 
 select {

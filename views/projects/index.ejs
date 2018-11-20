@@ -25,7 +25,12 @@
   <div class="extra content">
     <span class="left floated">
       <a href="/projects/<%=project._id%>">
-        <i class="comment icon"></i>
+        <div class="ui label">
+          <i class="comment icon"></i>
+          <% if(project.comments.length > 0){ %>
+            <%= project.comments.length %>
+          <% } %>
+        </div>
       </a>
     </span>
     <span class="right floated">
