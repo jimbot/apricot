@@ -45,7 +45,11 @@
   <div class="ui primary menu">
     <div class="left menu">
       <div class="ui secondary menu">
-        <a class="item" href="/projects">Logo</a>
+        <% if(!currentUser){ %>
+          <a class="item" href="/">Logo</a>
+        <% } else { %>
+          <a class="item" href="/projects">Logo</a>
+        <% } %>
       </div>
     </div>
     <div class="right menu">
@@ -60,7 +64,7 @@
         <a class="ui item" href="/register">Signup</a>
         <a class="ui item" href="/login">Login</a>
         <% } else { %>
-        <a class="ui item" href="/projects/profile">
+        <a class="ui item" href="/profile">
           <%= currentUser.username %></a>
         <a class="ui item" href="/logout">Logout</a>
         <% } %>

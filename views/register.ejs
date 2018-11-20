@@ -3,21 +3,37 @@
 <div class="ui main text container segment log_reg_box">
   <div class="ui form">
     <h1 class="ui header">
-      Sign Up
+      Welcome!
     </h1>
+    <p id="welcome">Create an account to start collaborating with people in your community</p>
     <form action="/register" method="POST" class="ui form">
       <div class="field">
-        <input type="text" name="username" placeholder="username">
+          <div class="two fields">
+            <div class="field">
+              <input type="text" name="" placeholder="First Name">
+            </div>
+            <div class="field">
+              <input type="text" name="" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+      <div class="field">
+        <input type="text" name="username" placeholder="Username or Email">
       </div>
       <div class="field">
-        <input type="password" name="password" placeholder="password">
+        <input type="password" name="password" placeholder="Password">
       </div>
+      <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox">
+            <label>I agree to the Terms and Conditions</label>
+          </div>
+        </div>
       <button class="ui primary submit button">
         Create Account
       </button>
     </form>
   </div>
-  <br/>
   <br/>
   <div class="extra">
       <p style="font-size: 10pt;">Already have an account? <a class="ui item" href="/login">Login</a></p>

@@ -45,10 +45,6 @@ router.get("/pinned", function(req, res){
   res.render("projects/pinned");
 });
 
-router.get("/profile", isLoggedIn, function(req, res){
-  res.render("profile");
-});
-
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();

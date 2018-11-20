@@ -12,17 +12,16 @@
       <div class="field">
         <input type="text" name="project[subject]" value="" placeholder="Subject">
       </div>
+
       <div class="field">
-        <input type="text" name="project[location]" value="" placeholder="Location">
+        <input type="text" name="project[location]" value="" placeholder="Burnaby, B.C.">
       </div>
       <div class="field">
-        <div class="field">
-          <textarea class="projectDesc" name="project[description]"
-            placeholder="Describe your project (500 characters remaining)"
-            rows="5"></textarea>
-        </div>
+        <textarea class="projectDesc" name="project[description]"
+          placeholder="Describe what your project or idea is about"
+          rows="5" style="resize: none; line-height: 150%;" maxlength="350"></textarea>
       </div>
-      <button class="ui submit button">
+      <button class="ui primary submit button">
         Create Project
       </button>
     </form>

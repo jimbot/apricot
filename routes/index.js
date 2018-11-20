@@ -47,6 +47,12 @@ router.get("/logout", function(req, res){
   res.redirect("/");
 });
 
+// Profile and Pinned
+
+router.get("/profile", isLoggedIn, function(req, res){
+  res.render("profile");
+});
+
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();

@@ -1,10 +1,10 @@
 div.ui.card.container {
-  width: 40%;
+  width: 600px;
 }
 
 div.ui.main.text.container.segment.log_reg_box {
   width: 30%;
-  padding: 2.5%;
+  padding: 2%;
 }
 
 div.ui.primary.menu {
@@ -26,4 +26,8 @@ i.plus.circle.icon {
   position: fixed;
   font-size: 30pt;
   left: 93%;
+}
+
+#welcome {
+  font-size: 12pt;
 }
