@@ -7,9 +7,14 @@ div.ui.main.text.container.segment.log_reg_box {
   padding: 20px;
 }
 
+div.ui.main.text.container.segment.newProj {
+  width: 600px;
+  padding: 30px;
+}
+
 div.ui.primary.menu {
   margin-bottom: 40px;
-  padding: 5px;
+  padding: 10px;
 }
 
 div.ui.card.container {
@@ -44,6 +49,34 @@ a.item {
   border-left: #fff !important;
 }
 
-.ui.input>input {
-  border-radius: 2em !important;
+#placeholder_option {
+  color: red;
+}
+
+/* SELECT */
+
+select {
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    word-wrap: break-word;
+    line-height: 1em;
+    white-space: normal;
+    outline: 0;
+    min-width: 14em;
+    min-height: 2.71428571em;
+    background: #fff;
+    display: inline-block;
+    padding: .78571429em 2.1em .78571429em 1em;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    color: rgba(0,0,0,.87) !important;
+}
+
+select:invalid {
+  color: rgb(199, 199, 199) !important;
 }
