@@ -15,6 +15,10 @@
       <br />
       <a>
         <%=project.location%></a>
+      <br/>
+      <a>
+        <%=project.author.username%>
+      </a>
     </div>
     <div class="description">
       <p>
@@ -34,7 +38,7 @@
       </a>
     </span>
     <span class="right floated">
-      <%=project.created.toDateString().split(' ').slice(1).join(' ') %>
+      <%= moment(project.createdAt).fromNow() %>
     </span>
   </div>
   <div class="ui bottom button">

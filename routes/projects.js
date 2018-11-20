@@ -21,7 +21,18 @@ router.get("/new", isLoggedIn, function(req, res){
 
 // create ROUTE
 router.post("/", function(req, res){
-  Project.create(req.body.project, function(err, newProject){
+  var title = req.body.title;
+  var subject = req.body.subject;
+  var location = req.body.location;
+  var description = req.body.description;
+  var author = {
+      id: req.user._id,
+      username: req.user.username
+  }
+
+  var newProject = {title: title, subject: subject, location: location, description: description, author: author};
+
+  Project.create(newProject, function(err, newlyCreated){
     if(err){
       res.render("new");
     } else {
@@ -43,6 +54,17 @@ router.get("/:id", function(req, res){
 
 router.get("/pinned", function(req, res){
   res.render("projects/pinned");
+});
+
+// DELETE ROUTE
+router.delete("/:id", isLoggedIn, function(req, res){
+  Project.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      res.redirect("/projects");
+    } else {
+      res.redirect("/projects");
+    }
+  });
 });
 
 function isLoggedIn(req, res, next){

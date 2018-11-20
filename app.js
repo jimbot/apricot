@@ -4,7 +4,8 @@ var express = require("express"),
     // for authentication
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
-    passportLocalMongoose = require("passport-local-mongoose");
+    passportLocalMongoose = require("passport-local-mongoose"),
+    methodOverride = require("method-override");
     // for schemas
     User = require("./models/user");
     Project = require("./models/project");
@@ -17,6 +18,10 @@ var express = require("express"),
 var app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(methodOverride('_method'));
+//require moment
+app.locals.moment = require('moment');
+
 app.use(bodyParser.urlencoded({extended: true}));
 mongoose.connect("mongodb://jc1995:apricot112@ds163013.mlab.com:63013/apricot", {useNewUrlParser: true});
 // mongoose.connect("mongodb://localhost:27017/apricot", {useNewUrlParser: true});

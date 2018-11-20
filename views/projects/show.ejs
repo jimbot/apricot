@@ -28,7 +28,8 @@
       </a>
     </span>
     <span class="right floated">
-      <%=project.created.toDateString().split(' ').slice(1).join(' ') %>
+      <!-- project.created.toDateString().split(' ').slice(1).join(' ') -->
+      <%= moment(project.createdAt).fromNow() %>
     </span>
   </div>
   <div class="ui bottom button">
@@ -58,6 +59,9 @@
             </span>
           </p>
         </div>
+        <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
+          <button class="ui primary button">Delete</button>
+        </form>
       </div>
     </div>
   </div>
@@ -87,7 +91,7 @@
               <%= comment.author.username %></a>
             <div class="metadata date_commented">
               <span class="date">
-                <%=comment.created.toDateString().split(' ').slice(1).join(' ')%>
+                <%= moment(comment.createdAt).fromNow() %>
               </span>
             </div>
             <div class="text">
