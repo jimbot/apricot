@@ -28,7 +28,7 @@
       </a>
     </span>
     <span class="right floated">
-      <%=project.created.toDateString() %>
+      <%=project.created.toDateString().split(' ').slice(1).join(' ') %>
     </span>
   </div>
   <div class="ui bottom button">
@@ -86,7 +86,9 @@
             <a class="author">
               <%= comment.author.username %></a>
             <div class="metadata date_commented">
-              <span class="date">2 hours ago</span>
+              <span class="date">
+                <%=comment.created.toDateString().split(' ').slice(1).join(' ')%>
+              </span>
             </div>
             <div class="text">
               <%= comment.text %>
