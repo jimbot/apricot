@@ -29,7 +29,7 @@
       </a>
     </span>
     <span class="right floated">
-      <%=project.created.toDateString() %>
+      <%=project.created.toDateString().split(' ').slice(1).join(' ') %>
     </span>
   </div>
   <div class="ui bottom button">
