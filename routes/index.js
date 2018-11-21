@@ -25,7 +25,6 @@ router.post("/register", usernameToLowerCase, function(req, res){
     username: req.body.username,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    // ./userProfiles/" + num + ".jpg
     profilePicture: pics[num]
   });
   User.register(newUser, req.body.password, function(err, user){
