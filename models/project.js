@@ -5,7 +5,6 @@ var projectSchema = new mongoose.Schema({
   subject: String,
   location: String,
   description: String,
-  image: String,
   created: {type: Date, default: Date.now},
   comments: [
     {
@@ -18,7 +17,8 @@ var projectSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
     },
-    username: String
+    username: String,
+    profilePicture: String
   }
 });
 

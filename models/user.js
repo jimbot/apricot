@@ -5,7 +5,8 @@ var UserSchema = new mongoose.Schema({
     username: String,
     password: String,
     firstName: String,
-    lastName: String
+    lastName: String,
+    profilePicture: String
 });
 
 // take passport local mongoose package and add methods to our user schema

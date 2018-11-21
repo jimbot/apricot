@@ -15,10 +15,18 @@ router.get("/register", function(req, res){
 
 // handling user sign up
 router.post("/register", usernameToLowerCase, function(req, res){
+  var pics = [
+    "http://gdurl.com/XG8G",
+    "http://gdurl.com/nrjZ",
+    "http://gdurl.com/M5Fd"
+  ];
+  var num = Math.floor((Math.random() * 2));
   var newUser = new User({
     username: req.body.username,
     firstName: req.body.firstName,
-    lastName: req.body.lastName
+    lastName: req.body.lastName,
+    // ./userProfiles/" + num + ".jpg
+    profilePicture: pics[num]
   });
   User.register(newUser, req.body.password, function(err, user){
     if(err){
@@ -60,6 +68,12 @@ router.get("/profile", isLoggedIn, function(req, res){
 function usernameToLowerCase(req, res, next){
     req.body.username = req.body.username.toLowerCase();
     next();
+}
+
+function genRandProfilePic(req, res, next){
+  // random number between 0 and 21
+  var num = Math.floor((Math.random() * 21));
+  req.body.profilePicture = "../userProfiles/" + num + ".jpg";
 }
 
 function isLoggedIn(req, res, next){

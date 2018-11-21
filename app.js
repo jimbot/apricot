@@ -23,7 +23,7 @@ app.use(methodOverride('_method'));
 app.locals.moment = require('moment');
 
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://jc1995:apricot112@ds163013.mlab.com:63013/apricot", {useNewUrlParser: true});
+mongoose.connect("mongodb://apricot:jameschen1@ds037997.mlab.com:37997/apricot", {useNewUrlParser: true});
 // mongoose.connect("mongodb://localhost:27017/apricot", {useNewUrlParser: true});
 // secret helps encode and decode the session for authentication
 app.use(require("express-session")({
@@ -49,10 +49,10 @@ app.use("/projects", projectRoutes);
 app.use(commentRoutes);
 
 //keep at bottom
-app.listen(process.env.PORT || 5000, function(){
-  console.log("listening on localhost: 3000");
-});
-
-// app.listen(3000, function(){
+// app.listen(process.env.PORT || 5000, function(){
 //   console.log("listening on localhost: 3000");
 // });
+
+app.listen(3000, function(){
+  console.log("listening on localhost: 3000");
+});

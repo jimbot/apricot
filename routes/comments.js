@@ -25,6 +25,7 @@ router.post("/projects/:id/comments", isLoggedIn, function(req, res){
         } else {
           comment.author.id = req.user._id;
           comment.author.username = req.user.username;
+          comment.author.profilePicture = req.user.profilePicture;
           comment.save();
           project.comments.push(comment);
           project.save();
