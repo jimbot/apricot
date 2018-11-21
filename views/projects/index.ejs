@@ -47,22 +47,48 @@
     </span>
   </div>
 
-  <div class="ui bottom button">
-    <div class="ui accordion">
-      <div class="title">
-        <i class="caret down icon" style="color:#707070"></i>
-      </div>
-      <div class="content" style="text-align: left; font-weight: normal">
-        <div class="ui vertical segment">
-          <p>update to this post 1.
-            <span class="right floated">
-              1 day ago
-            </span>
-          </p>
+  <!-- Only render bottom button if the post has been updated by the creator -->
+  <% if(project.updates.length > 0) { %>
+    <div class="ui bottom button">
+      <div class="ui accordion">
+        <div class="title">
+          <i class="caret down icon" style="color:#707070"></i>
+        </div>
+        <div class="content" style="text-align: left; font-weight: normal">
+          <div class="ui vertical segment">
+            <div class="header">
+              <h3 class="ui dividing header">
+                Updates
+              </h3>
+              <br/>
+              <!-- Render the updates -->
+              <div class="content">
+                <% project.updates.reverse().forEach(function(update){ %>
+                <div class="ui comments">
+                  <div class="comment">
+                    <div class="content">
+                      <a class="author">
+                        <%= update.author.username %></a>
+                      <div class="metadata date_commented">
+                        <span class="date">
+                          <%= moment(update.createdAt).fromNow() %>
+                        </span>
+                      </div>
+                      <div class="text">
+                        <%= update.text %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  <% } %>
+
 
 </div>
 <% }) %>

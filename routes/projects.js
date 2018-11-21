@@ -2,11 +2,19 @@ var express = require("express");
 var router = express.Router();
 var Project = require("../models/project")
 
-// creating projects
-// new ROUTE
-router.get("/", function(req, res){
+// HOME PAGE
+// router.get("/", function(req, res){
+//   Project.find({}, function(err, projects){
+//     if(err){
+//       console.log(err);
+//     } else {
+//       res.render("projects/index", {projects: projects});
+//     }
+//   });
+// });
 
-  Project.find({}, function(err, projects){
+router.get("/", function(req, res){
+  Project.find({}).populate("updates").exec(function(err, projects){
     if(err){
       console.log(err);
     } else {
