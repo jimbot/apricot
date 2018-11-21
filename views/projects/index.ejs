@@ -3,7 +3,12 @@
 <% projects.reverse().forEach(function(project){ %>
 <div class="ui card container">
   <div class="content">
-    <a><i class="right floated thumbtack icon"></i></a>
+    <!-- Render edit post form -->
+    <% if(project.author.id.equals(currentUser._id)) { %>
+          <a href="/projects/<%=project._id%>"><i class="right floated edit icon"></i></a>
+    <% } else { %>
+          <a><i class="right floated thumbtack icon"></i></a>
+    <% } %>
     <div class="header">
       <h2 class="ui header">
         <%=project.title%>
@@ -24,6 +29,10 @@
   </div>
   <div class="extra content">
     <span class="left floated">
+      <a class="ui image label">
+        <img src="<%=project.author.profilePicture%>">
+        <%= project.author.username %>
+      </a>
       <a href="/projects/<%=project._id%>">
         <div class="ui label">
           <i class="comment icon"></i>
@@ -31,16 +40,13 @@
             <%= project.comments.length %>
           <% } %>
         </div>
-        <a class="ui image label">
-          <img src="<%=project.author.profilePicture%>">
-          <%= project.author.username %>
-        </a>
       </a>
     </span>
     <span class="right floated">
       <%= moment(project._id.createdAt).fromNow() %>
     </span>
   </div>
+
   <div class="ui bottom button">
     <div class="ui accordion">
       <div class="title">
@@ -54,23 +60,10 @@
             </span>
           </p>
         </div>
-        <div class="ui vertical segment">
-          <p>update to this post 2.
-            <span class="right floated">
-              3 days ago
-            </span>
-          </p>
-        </div>
-        <div class="ui vertical segment">
-          <p>update to this post 3.
-            <span class="right floated">
-              5 days ago
-            </span>
-          </p>
-        </div>
       </div>
     </div>
   </div>
+
 </div>
 <% }) %>
 

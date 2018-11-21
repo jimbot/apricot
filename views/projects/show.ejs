@@ -2,7 +2,16 @@
 
 <div class="ui card container">
   <div class="content">
-    <a><i class="right floated thumbtack icon"></i></a>
+
+    <!-- Render delete post form -->
+    <% if(project.author.id.equals(currentUser._id)) { %>
+    <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
+      <a><i class="right floated trash icon"></i></a>
+    </form>
+    <% } else { %>
+          <a><i class="right floated thumbtack icon"></i></a>
+    <% } %>
+
     <div class="header">
       <h2 class="ui header">
         <%=project.title%>
@@ -24,7 +33,14 @@
   <div class="extra content">
     <span class="left floated">
       <a href="/projects">
-        back
+        <div class="ui label">
+          <i class="caret left icon"></i>
+            back
+        </div>
+      </a>
+      <a class="ui image label">
+        <img src="<%=project.author.profilePicture%>">
+        <%= project.author.username %>
       </a>
     </span>
     <span class="right floated">
@@ -32,41 +48,63 @@
       <%= moment(project.createdAt).fromNow() %>
     </span>
   </div>
+  <!-- updates section -->
+
   <div class="ui bottom button">
     <div class="ui accordion">
-      <div class="title">
-        <i class="caret down icon" style="color:#707070"></i>
-      </div>
-      <div class="content" style="text-align: left; font-weight: normal">
-        <div class="ui vertical segment">
-          <p>update to this post 1.
-            <span class="right floated">
-              1 day ago
-            </span>
-          </p>
-        </div>
-        <div class="ui vertical segment">
-          <p>update to this post 2.
-            <span class="right floated">
-              3 days ago
-            </span>
-          </p>
-        </div>
-        <div class="ui vertical segment">
-          <p>update to this post 3.
-            <span class="right floated">
-              5 days ago
-            </span>
-          </p>
-        </div>
+
+      <% if(project.author.id.equals(currentUser._id)) { %>
+        <div class="active title">
+      <% } else { %>
+        <div class="title">
+      <% } %>
+
+        <!-- show different icon depending on the user -->
         <% if(project.author.id.equals(currentUser._id)) { %>
-        <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
-          <button class="ui primary button">Delete</button>
-        </form>
+            <i class="plus icon" style="color:#707070"></i>
+        <% } else { %>
+          <i class="caret down icon" style="color:#707070"></i>
         <% } %>
+      </div>
+
+      <% if(project.author.id.equals(currentUser._id)) { %>
+        <div class="active content" style="text-align: left; font-weight: normal">
+      <% } else { %>
+        <div class="content" style="text-align: left; font-weight: normal">
+      <% } %>
+
+        <div class="ui vertical segment">
+          <div class="header">
+            <h3 class="ui dividing header">
+              Updates
+            </h3>
+            <!-- Render update form if the current user owns the post -->
+            <% if(project.author.id.equals(currentUser._id)) { %>
+              <div class="content">
+                <!-- Render updates form -->
+                <form action="/projects/<%=project._id%>/comments" method="POST" class="ui form">
+                  <div class="field">
+                    <textarea type="text" name="comment[text]" placeholder="add an update to your project" rows="2" style="resize: none;"></textarea>
+                  </div>
+                  <button class="ui blue submit button">Update</button>
+                </form>
+              </div>
+            <% } %>
+
+          </div>
+          <div class="content">
+            <p>update to this post 1.
+              <span class="right floated">
+                1 day ago
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- closing container tag -->
 </div>
 
 <div class="ui card container">
@@ -90,7 +128,7 @@
         <div class="ui comments">
           <div class="comment">
             <a class="avatar">
-              <img src="<%=project.author.profilePicture%>">
+              <img src="<%=comment.author.profilePicture%>">
             </a>
             <div class="content">
               <a class="author">

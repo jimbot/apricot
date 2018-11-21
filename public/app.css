@@ -21,8 +21,18 @@ div.ui.card.container {
   margin-bottom: 25px;
 }
 
+i.icon.caret.down:hover {
+  color: rgb(65, 131, 196) !important;
+}
+
 div.ui.bottom.button:hover {
-  background-color: #DCDCDC;
+  background-color: #fff !important;
+}
+
+div.ui.bottom.button {
+  background-color: #fff !important;
+  border: 1px solid rgba(42,42,38,.15) !important;
+  border-top: 1px solid rgba(0,0,0,.05)!important;
 }
 
 i.plus.circle.icon {
@@ -63,6 +73,10 @@ div.ui.label {
 
 div.ui.label:hover {
   color: rgb(65, 131, 196);
+}
+
+.ui.button {
+  /* padding: .58571429em 1em .58571429em !important; */
 }
 
 /* SELECT */
