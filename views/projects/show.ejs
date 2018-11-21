@@ -1,15 +1,15 @@
 <% include ../partials/header %>
 
-<div class="ui card container">
+<div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
   <div class="content">
 
     <!-- Render delete post form -->
     <% if(project.author.id.equals(currentUser._id)) { %>
     <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
-      <a><i class="right floated trash icon"></i></a>
+      <a><i class="right floated trash icon" style="font-size: 1.5em; color: #CCCCCC;" id="remove"></i></a>
     </form>
     <% } else { %>
-          <a><i class="right floated thumbtack icon"></i></a>
+          <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: #CCCCCC;" id="pin"></i></a>
     <% } %>
 
     <div class="header">
@@ -114,7 +114,7 @@
                 </h3>
                 <br/>
               <div class="meta">
-                <p>Pin this card to get notified when it does</p>
+                <p>Pin this card to be notified for future updates</p>
               </div>
             <% } %>
 
@@ -143,7 +143,7 @@
   <!-- closing container tag -->
 </div>
 
-<div class="ui card container">
+<div class="ui card container"  style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
   <div class="content">
     <div class="ui comments">
       <h3 class="ui dividing header">Discussion</h3>
@@ -153,7 +153,7 @@
           <div class="field">
             <textarea type="text" name="comment[text]" placeholder="Join the discussion" rows="2" style="resize: none;"></textarea>
           </div>
-          <button class="ui blue submit button">Comment</button>
+          <button class="ui blue submit button">Post</button>
         </form>
       </div>
 

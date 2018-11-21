@@ -1,23 +1,36 @@
 <% include ../partials/header %>
 
+<div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
+  <div id="searchBar" class="item">
+    <div class="ui small icon input" style="width:100%!important;">
+      <input type="text" placeholder="Search for project..."
+        style="border:none!important;">
+      <i class="search link icon left floated" style="color: rgb(142,142,143)"></i>
+    </div>
+  </div>
+</div>
+
+
 <% projects.reverse().forEach(function(project){ %>
-<div class="ui card container">
+<div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
   <div class="content">
     <!-- Render edit post form -->
     <% if(project.author.id.equals(currentUser._id)) { %>
-          <a href="/projects/<%=project._id%>"><i class="right floated edit icon"></i></a>
+          <a href="/projects/<%=project._id%>">
+            <i class="right floated edit icon" style="font-size: 1.5em; color: #CCCCCC;" id="edit"></i>
+          </a>
     <% } else { %>
-          <a><i class="right floated thumbtack icon"></i></a>
+          <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: #CCCCCC;" id="pin"></i></a>
     <% } %>
     <div class="header">
-      <h2 class="ui header">
+      <a class="ui header" href="/projects/<%=project._id%>">
         <%=project.title%>
-      </h2>
+      </a>
     </div>
     <div class="meta">
       <a>
         <%=project.subject%></a>
-      <br />
+      <br/>
       <a>
         <%=project.location%></a>
     </div>

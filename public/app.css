@@ -1,24 +1,28 @@
+body {
+  background-color: rgb(246,247,248)!important;
+}
+
 div.ui.card.container {
-  width: 600px;
+  width: 500px;
+  border: none!important;
+  margin-bottom: 25px;
 }
 
 div.ui.main.text.container.segment.log_reg_box {
-  width: 450px;
+  width: 500px;
   padding: 20px;
+  border: none!important;
 }
 
 div.ui.main.text.container.segment.newProj {
-  width: 600px;
+  width: 500px;
   padding: 30px;
+  border: none!important;
 }
 
 div.ui.primary.menu {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding: 10px;
-}
-
-div.ui.card.container {
-  margin-bottom: 25px;
 }
 
 i.icon.caret.down:hover {
@@ -29,9 +33,13 @@ div.ui.bottom.button:hover {
   background-color: #fff !important;
 }
 
+div.ui.bottom.button:hover {
+  background-color: whitesmoke!important;
+}
+
 div.ui.bottom.button {
   background-color: #fff !important;
-  border: 1px solid rgba(42,42,38,.15) !important;
+  border: 0.5px solid rgba(42,42,38,.15) !important;
   border-top: 1px solid rgba(0,0,0,.05)!important;
 }
 
@@ -59,10 +67,6 @@ a.item {
   border-left: #fff !important;
 }
 
-#placeholder_option {
-  color: red;
-}
-
 .ui.menu .item>.input input {
   border-radius: 2em;
 }
@@ -75,8 +79,40 @@ div.ui.label:hover {
   color: rgb(65, 131, 196);
 }
 
-.ui.button {
-  /* padding: .58571429em 1em .58571429em !important; */
+/* CSS for the profile page */
+
+div.ui.main.text.container.segment {
+  border: none!important;
+  width: 500px;
+}
+
+/* FOR BUTTONS */
+#remove{
+  -webkit-transition: color .2s ease-in;
+  -moz-transition: color .2s ease-in;
+  -o-transition: color .2s ease-in;
+  transition: color .2ss ease-in;
+}
+#remove:hover {
+    color: #F22613!important;
+}
+#edit{
+  -webkit-transition: color .2s ease-in;
+  -moz-transition: color .2s ease-in;
+  -o-transition: color .2s ease-in;
+  transition: color .2s ease-in;
+}
+#edit:hover {
+  color: rgb(65, 131, 196)!important;
+}
+#pin{
+  -webkit-transition: color .2s ease-in;
+  -moz-transition: color .2s ease-in;
+  -o-transition: color .2s ease-in;
+  transition: color .2s ease-in;
+}
+#pin:hover {
+  color: rgb(65, 131, 196)!important;
 }
 
 /* SELECT */

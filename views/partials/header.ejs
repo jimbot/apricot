@@ -56,19 +56,18 @@
           <% } %>
         </div>
       </div>
+
       <div class="right menu">
-        <div id="searchBar" class="item">
-          <div class="ui small icon input">
-            <input type="text" placeholder="Search for project...">
-            <i class="search link icon"></i>
-          </div>
-        </div>
         <div class="ui secondary menu">
           <% if(!currentUser){ %>
           <a class="ui item" href="/register">Signup</a>
           <a class="ui item" href="/login">Login</a>
           <% } else { %>
+          <a class="ui item" href="/projects/new">
+            <i class="edit icon" style="font-size:1.2em;" id="edit"></i>
+          </a>
           <a class="ui item" href="/profile">
+            <img class="ui right spaced avatar image" src="<%=currentUser.profilePicture%>">
             <%= currentUser.firstName %></a>
           <a class="ui item" href="/logout">Logout</a>
           <% } %>
