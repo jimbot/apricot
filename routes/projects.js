@@ -57,7 +57,7 @@ router.get("/pinned", function(req, res){
 });
 
 // DELETE ROUTE
-router.delete("/:id", isLoggedIn, function(req, res){
+router.delete("/:id", checkProjectOwnership, function(req, res){
   Project.findByIdAndRemove(req.params.id, function(err){
     if(err){
       res.redirect("/projects");
@@ -66,6 +66,26 @@ router.delete("/:id", isLoggedIn, function(req, res){
     }
   });
 });
+
+// MIDDLEWARE BELOW
+
+function checkProjectOwnership(req, res, next) {
+  if(req.isAuthenticated()) {
+    Project.findById(req.params.id, function(err, foundProject){
+      if(err){
+        res.redirect("back");
+      } else {
+        if(foundProject.author.id.equals(req.user._id)) {
+          next();
+        } else {
+          res.redirect("back");
+        }
+      }
+    });
+  } else {
+    res.redirect("back");
+  }
+}
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){

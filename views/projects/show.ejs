@@ -59,9 +59,11 @@
             </span>
           </p>
         </div>
+        <% if(project.author.id.equals(currentUser._id)) { %>
         <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
           <button class="ui primary button">Delete</button>
         </form>
+        <% } %>
       </div>
     </div>
   </div>
