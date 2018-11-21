@@ -14,8 +14,12 @@ router.get("/register", function(req, res){
 });
 
 // handling user sign up
-router.post("/register", function(req, res){
-  var newUser = new User({username: req.body.username});
+router.post("/register", usernameToLowerCase, function(req, res){
+  var newUser = new User({
+    username: req.body.username,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName
+  });
   User.register(newUser, req.body.password, function(err, user){
     if(err){
       console.log(err);
@@ -35,7 +39,7 @@ router.get("/login", function(req, res){
 
 // login logic
 // middleware
-router.post("/login", passport.authenticate("local", {
+router.post("/login", usernameToLowerCase, passport.authenticate("local", {
   successRedirect: "/projects",
   failtureRedirect: "/login"
 }), function(req, res){
@@ -52,6 +56,11 @@ router.get("/logout", function(req, res){
 router.get("/profile", isLoggedIn, function(req, res){
   res.render("profile");
 });
+
+function usernameToLowerCase(req, res, next){
+    req.body.username = req.body.username.toLowerCase();
+    next();
+}
 
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){

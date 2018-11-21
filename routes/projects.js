@@ -25,9 +25,10 @@ router.post("/", function(req, res){
   var subject = req.body.subject;
   var location = req.body.location;
   var description = req.body.description;
+  // var image = req.body.image;
   var author = {
       id: req.user._id,
-      username: req.user.username
+      username: req.user.username,
   }
 
   var newProject = {title: title, subject: subject, location: location, description: description, author: author};

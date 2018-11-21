@@ -15,10 +15,6 @@
       <br />
       <a>
         <%=project.location%></a>
-      <br/>
-      <a>
-        <%=project.author.username%>
-      </a>
     </div>
     <div class="description">
       <p>
@@ -35,10 +31,14 @@
             <%= project.comments.length %>
           <% } %>
         </div>
+        <a class="ui image label">
+          <img src="../userProfiles/matt.jpg">
+          <%= project.author.username %>
+        </a>
       </a>
     </span>
     <span class="right floated">
-      <%= moment(project.createdAt).fromNow() %>
+      <%= moment(project._id.createdAt).fromNow() %>
     </span>
   </div>
   <div class="ui bottom button">
