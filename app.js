@@ -10,9 +10,11 @@ var express = require("express"),
     User = require("./models/user");
     Project = require("./models/project");
     Comment = require("./models/comment");
+    Update = require("./models/update");
 
     var commentRoutes = require("./routes/comments"),
         projectRoutes = require("./routes/projects"),
+        updateRoutes = require("./routes/updates"),
         indexRoutes = require("./routes/index");
 
 var app = express();
@@ -47,6 +49,7 @@ app.use(function(req, res, next){
 app.use("/", indexRoutes);
 app.use("/projects", projectRoutes);
 app.use(commentRoutes);
+app.use(updateRoutes);
 
 //keep at bottom
 // app.listen(process.env.PORT || 5000, function(){

@@ -82,23 +82,39 @@
             <% if(project.author.id.equals(currentUser._id)) { %>
               <div class="content">
                 <!-- Render updates form -->
-                <form action="/projects/<%=project._id%>/comments" method="POST" class="ui form">
+                <form action="/projects/<%=project._id%>/updates" method="POST" class="ui form">
                   <div class="field">
-                    <textarea type="text" name="comment[text]" placeholder="add an update to your project" rows="2" style="resize: none;"></textarea>
+                    <textarea type="text" name="update[text]" placeholder="add an update to your project" rows="2" style="resize: none;"></textarea>
                   </div>
                   <button class="ui blue submit button">Update</button>
                 </form>
               </div>
             <% } %>
 
+            <!-- Render the updates -->
+            <div class="content">
+              <% project.updates.reverse().forEach(function(update){ %>
+              <div class="ui comments">
+                <div class="comment">
+                  <div class="content">
+                    <a class="author">
+                      <%= update.author.username %></a>
+                    <div class="metadata date_commented">
+                      <span class="date">
+                        <%= moment(update.createdAt).fromNow() %>
+                      </span>
+                    </div>
+                    <div class="text">
+                      <%= update.text %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+
           </div>
-          <div class="content">
-            <p>update to this post 1.
-              <span class="right floated">
-                1 day ago
-              </span>
-            </p>
-          </div>
+
         </div>
       </div>
     </div>

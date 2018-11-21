@@ -45,7 +45,7 @@ router.post("/", function(req, res){
 
 // SHOW
 router.get("/:id", function(req, res){
-  Project.findById(req.params.id).populate("comments").exec(function(err, foundProject){
+  Project.findById(req.params.id).populate("comments").populate("updates").exec(function(err, foundProject){
     if(err){
       res.redirect("/projects");
     } else {

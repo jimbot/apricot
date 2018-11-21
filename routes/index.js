@@ -88,12 +88,6 @@ function usernameToLowerCase(req, res, next){
     next();
 }
 
-function genRandProfilePic(req, res, next){
-  // random number between 0 and 21
-  var num = Math.floor((Math.random() * 21));
-  req.body.profilePicture = "../userProfiles/" + num + ".jpg";
-}
-
 function isLoggedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();

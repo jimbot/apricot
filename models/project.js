@@ -12,6 +12,12 @@ var projectSchema = new mongoose.Schema({
       ref: "Comment"
     }
   ],
+  updates: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Update"
+    }
+  ],
   author: {
     id: {
       type: mongoose.Schema.Types.ObjectId,
