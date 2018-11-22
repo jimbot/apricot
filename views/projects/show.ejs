@@ -34,8 +34,7 @@
     <span class="left floated">
       <a href="/projects">
         <div class="ui label">
-          <i class="caret left icon"></i>
-            back
+          <i class="caret left icon" style="font-size: 1.1em"></i>
         </div>
       </a>
       <a class="ui image label">
@@ -77,9 +76,9 @@
             <!-- show placeholder text if the current post has 0 updates -->
             <% if(project.updates.length > 0){ %>
               <div class="header">
-                <h3 class="ui dividing header">
+                <h2 class="ui dividing header">
                   Updates
-                </h3>
+                </h2>
                 <br/>
               <!-- Render the updates -->
               <div class="content">
@@ -110,11 +109,11 @@
             <% } else { %>
               <div class="header">
                 <h3 class="ui dividing header">
-                  No updates yet!
+                  No updates yet...
                 </h3>
                 <br/>
               <div class="meta">
-                <p>Pin this card to be notified for future updates</p>
+                <p>Pin this card to get notified when it's updated!</p>
               </div>
             <% } %>
 
@@ -126,7 +125,7 @@
                 <!-- Render updates form -->
                 <form action="/projects/<%=project._id%>/updates" method="POST" class="ui form">
                   <div class="field">
-                    <textarea type="text" name="update[text]" placeholder="add an update to your project" rows="2" style="resize: none;"></textarea>
+                    <textarea type="text" name="update[text]" placeholder="Add a project update" rows="2" style="resize: none;"></textarea>
                   </div>
                   <button class="ui blue submit button">Update</button>
                 </form>
@@ -146,21 +145,11 @@
 <div class="ui card container"  style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
   <div class="content">
     <div class="ui comments">
-      <h3 class="ui dividing header">Discussion</h3>
+      <h2 class="ui dividing header">Discussion</h2>
+      <br/>
 
       <div class="content">
-        <form action="/projects/<%=project._id%>/comments" method="POST" class="ui form">
-          <div class="field">
-            <textarea type="text" name="comment[text]" placeholder="Join the discussion" rows="2" style="resize: none;"></textarea>
-          </div>
-          <button class="ui blue submit button">Post</button>
-        </form>
-      </div>
-
-      <br />
-
-      <div class="content">
-        <% project.comments.reverse().forEach(function(comment){ %>
+        <% project.comments.forEach(function(comment){ %>
         <div class="ui comments">
           <div class="comment">
             <a class="avatar">
@@ -181,6 +170,17 @@
           </div>
         </div>
         <% }) %>
+      </div>
+
+      <br/>
+
+      <div class="content">
+        <form action="/projects/<%=project._id%>/comments" method="POST" class="ui form">
+          <div class="field">
+            <textarea type="text" name="comment[text]" placeholder="Join the discussion" rows="2" style="resize: none;"></textarea>
+          </div>
+          <button class="ui blue submit button">Post</button>
+        </form>
       </div>
 
 
