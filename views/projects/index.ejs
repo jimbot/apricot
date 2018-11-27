@@ -17,10 +17,12 @@
     <!-- Render edit post form -->
     <% if(project.author.id.equals(currentUser._id)) { %>
           <a href="/projects/<%=project._id%>">
-            <i class="right floated edit icon" style="font-size: 1.5em; color: #CCCCCC;" id="edit"></i>
+            <i class="right floated edit icon" style="font-size: 1.5em; color: rgb(204, 204, 204);" id="edit"></i>
           </a>
     <% } else { %>
-          <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: #CCCCCC;" id="pin"></i></a>
+          <form id="addProject" action="/<%=project._id%>/pin" method="POST">
+            <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: rgb(204, 204, 204);" id="pin"></i></a>
+          </form>
     <% } %>
     <div class="header">
       <a class="ui header" href="/projects/<%=project._id%>">
@@ -103,5 +105,7 @@
   <% } %>
 </div>
 <% }) %>
+
+
 
 <% include ../partials/footer %>

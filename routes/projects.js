@@ -77,6 +77,25 @@ router.delete("/:id", checkProjectOwnership, function(req, res){
   });
 });
 
+// PIN PROJECT ROUTE
+router.post("/:id/pin", isLoggedIn, function(req, res){
+  Project.findById(req.params.id, function(err, project){
+    if(err){
+      console.log(err);
+    } else {
+        currentUser.project.push(project);
+        currentUser.save();
+        // comment.author.id = req.user._id;
+        // comment.author.username = req.user.username;
+        // comment.author.profilePicture = req.user.profilePicture;
+        // comment.save();
+        // project.comments.push(comment);
+        // project.save();
+        res.redirect("/projects");
+    }
+  });
+});
+
 // MIDDLEWARE BELOW
 
 function checkProjectOwnership(req, res, next) {
