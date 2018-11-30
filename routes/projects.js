@@ -78,19 +78,13 @@ router.delete("/:id", checkProjectOwnership, function(req, res){
 });
 
 // PIN PROJECT ROUTE
-router.post("/:id/pin", isLoggedIn, function(req, res){
+router.post("/pin/:id", isLoggedIn, function(req, res){
   Project.findById(req.params.id, function(err, project){
     if(err){
       console.log(err);
     } else {
-        currentUser.project.push(project);
-        currentUser.save();
-        // comment.author.id = req.user._id;
-        // comment.author.username = req.user.username;
-        // comment.author.profilePicture = req.user.profilePicture;
-        // comment.save();
-        // project.comments.push(comment);
-        // project.save();
+        req.currentUser.pinnedProjects.push(project);
+        req.currentUser.save();
         res.redirect("/projects");
     }
   });

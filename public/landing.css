@@ -15,3 +15,8 @@ a.ui.primary.button {
 a.item {
   border-left: #fff !important;
 }
+
+.landing-photo img {
+  position: relative;
+  width: 100%;
+}
