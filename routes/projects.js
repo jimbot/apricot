@@ -92,7 +92,6 @@ router.post("/pin/:id", isLoggedIn, function(req, res){
 });
 
 // MIDDLEWARE BELOW
-
 function checkProjectOwnership(req, res, next) {
   if(req.isAuthenticated()) {
     Project.findById(req.params.id, function(err, foundProject){

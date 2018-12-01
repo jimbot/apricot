@@ -40,7 +40,7 @@
           <a class="ui item">
             <i class="bell outline icon" style="font-size:1.2em;" id="edit"></i>
           </a>
-          <a class="ui item" href="/profile">
+          <a class="ui item" href="/profile/<%=currentUser._id%>">
             <img class="ui right spaced avatar image" src="<%=currentUser.profilePicture%>">
             <%= currentUser.firstName %></a>
           <a class="ui item" href="/logout">Logout</a>

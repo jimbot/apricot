@@ -43,7 +43,7 @@
           <i class="caret left icon" style="font-size: 1.1em"></i> back
         </div>
       </a>
-      <a class="ui image label">
+      <a class="ui image label" href="/profile/<%=project.author.id%>">
         <img src="<%=project.author.profilePicture%>">
         <%= project.author.username %>
       </a>
@@ -144,11 +144,11 @@
         <% project.comments.forEach(function(comment){ %>
         <div class="ui comments">
           <div class="comment">
-            <a class="avatar">
+            <a class="avatar" href="/profile/<%=comment.author.id%>">
               <img src="<%=comment.author.profilePicture%>">
             </a>
             <div class="content">
-              <a class="author">
+              <a class="author" href="/profile/<%=comment.author.id%>">
                 <%= comment.author.username %></a>
               <div class="metadata date_commented">
                 <span class="date">

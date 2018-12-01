@@ -78,9 +78,14 @@ router.get("/logout", function(req, res){
 });
 
 // Profile and Pinned
-
-router.get("/profile", isLoggedIn, function(req, res){
-  res.render("profile");
+router.get("/profile/:id", isLoggedIn, function(req, res){
+  User.findById(req.params.id, function(err, foundUser){
+    if(err){
+      console.log(err);
+    } else {
+      res.render("profile", {foundUser: foundUser});
+    }
+  });
 });
 
 function usernameToLowerCase(req, res, next){

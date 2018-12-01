@@ -25,12 +25,6 @@
     <% } else { %>
       <form id="addProject">
             <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: rgb(204, 204, 204);" id="pin"></i></a>
-
-            <!-- <a class="right floated">
-              <div class="ui label">
-                <i class="thumbtack icon"></i>Pin
-              </div>
-            </a> -->
       </form>
     <% } %>
     <div class="header">
@@ -53,7 +47,7 @@
   </div>
   <div class="extra content">
     <span class="left floated">
-      <a class="ui image label">
+      <a class="ui image label" href="/profile/<%=project.author.id%>">
         <img src="<%=project.author.profilePicture%>">
         <%= project.author.username %>
       </a>
