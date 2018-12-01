@@ -5,7 +5,7 @@
 
     <!-- Render delete post form -->
     <% if(project.author.id.equals(currentUser._id)) { %>
-    <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
+    <form action="/projects/<%= project._id %>?_method=DELETE" id="del-form" method="POST">
       <a><i class="right floated trash icon" style="font-size: 1.5em; color: #CCCCCC;" id="remove"></i></a>
     </form>
     <% } else { %>
@@ -34,7 +34,7 @@
     <span class="left floated">
       <a href="/projects">
         <div class="ui label">
-          <i class="caret left icon" style="font-size: 1.1em"></i>
+          <i class="caret left icon" style="font-size: 1.1em"></i> back
         </div>
       </a>
       <a class="ui image label">
@@ -49,22 +49,8 @@
   </div>
   <!-- updates section -->
 
-  <div class="ui bottom button">
+  <div class="ui bottom button sh">
     <div class="ui accordion">
-
-      <% if(project.author.id.equals(currentUser._id)) { %>
-        <div class="active title">
-      <% } else { %>
-        <div class="title">
-      <% } %>
-
-        <!-- show different icon depending on the user -->
-        <% if(project.author.id.equals(currentUser._id)) { %>
-            <i class="caret down icon" style="color:#707070"></i>
-        <% } else { %>
-          <i class="caret down icon" style="color:#707070"></i>
-        <% } %>
-      </div>
 
       <% if(project.author.id.equals(currentUser._id)) { %>
         <div class="active content" style="text-align: left; font-weight: normal">
@@ -184,6 +170,35 @@
       </div>
 
 
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui  vertical footer segment">
+  <div class="ui container foot">
+    <div class="ui stackable  divided equal height stackable grid">
+      <div class="three wide column">
+        <h4 class="ui  header">About</h4>
+        <div class="ui  link list">
+          <a href="#" class="item">Contact us</a>
+          <a href="#" class="item">Mission</a>
+          <a href="#" class="item">History</a>
+        </div>
+      </div>
+      <div class="three wide column">
+        <h4 class="ui  header">Services</h4>
+        <div class="ui  link list">
+          <a href="#" class="item">Clean Toilets</a>
+          <a href="#" class="item">Work at Costco</a>
+          <a href="#" class="item">Take a nap</a>
+        </div>
+      </div>
+      <div class="seven wide column">
+        <h4 class="ui  header">Trademark</h4>
+        <p>That photo at the top is not ours we don't <br/>even know where we got it. Seriously.</p>
+      </div>
     </div>
   </div>
 </div>

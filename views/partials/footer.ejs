@@ -22,8 +22,14 @@
 
     $(".right.floated.thumbtack.icon").click(function(){
       // console.log(currentUser._id);
-      console.log(project.author.id);
+      console.log(currentUser);
     });
+
+    var form = document.getElementById("del-form");
+
+    $(".right.floated.trash.icon").click(function(){
+      form.submit();
+    })
 
   });
 </script>

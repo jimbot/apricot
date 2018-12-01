@@ -6,6 +6,11 @@ div.ui.card.container {
   width: 625px;
   border: none!important;
   margin-bottom: 25px;
+  padding: 10px;
+}
+
+.ui.card>.extra, .ui.cards>.card>.extra {
+  border-top: none!important;
 }
 
 div.ui.main.text.container.segment.log_reg_box {
@@ -39,8 +44,13 @@ div.ui.bottom.button:hover {
 
 div.ui.bottom.button {
   background-color: #fff !important;
-  border: 0.5px solid rgba(42,42,38,.15) !important;
+  /* border: 0.5px solid rgba(42,42,38,.15) !important; */
   border-top: 1px solid rgba(0,0,0,.05)!important;
+}
+
+div.ui.bottom.button.sh {
+  background-color: #fff !important;
+  border-top: none!important;
 }
 
 i.plus.circle.icon {
