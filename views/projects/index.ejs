@@ -16,12 +16,21 @@
   <div class="content">
     <!-- Render edit post form -->
     <% if(project.author.id.equals(currentUser._id)) { %>
-          <a href="/projects/<%=project._id%>">
-            <i class="right floated edit icon" style="font-size: 1.5em; color: rgb(204, 204, 204);" id="edit"></i>
+
+          <a class="right floated" href="/projects/<%=project._id%>">
+            <div class="ui blue label">
+              <i class="edit icon"></i>Edit
+            </div>
           </a>
     <% } else { %>
       <form id="addProject">
             <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: rgb(204, 204, 204);" id="pin"></i></a>
+
+            <!-- <a class="right floated">
+              <div class="ui label">
+                <i class="thumbtack icon"></i>Pin
+              </div>
+            </a> -->
       </form>
     <% } %>
     <div class="header">
@@ -67,7 +76,7 @@
     <div class="ui bottom button">
       <div class="ui accordion">
         <div class="title">
-          <span style="color: #707070">more</span>
+          <span style="color: #707070">updates</span>
           <i class="caret down icon" style="color:#707070"></i>
         </div>
         <div class="content" style="text-align: left; font-weight: normal">
@@ -106,47 +115,5 @@
   <% } %>
 </div>
 <% }) %>
-
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/accordion.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.js"></script>
-
-<script>
-
-$(".right.floated.thumbtack.icon").click(function(){
-  // console.log(currentUser._id);
-  console.log(project.author.id);
-});
-
-</script> -->
-
-<div class="ui divider"></div>
-
-<div class="ui  vertical footer segment">
-  <div class="ui container foot">
-    <div class="ui stackable  divided equal height stackable grid">
-      <div class="three wide column">
-        <h4 class="ui  header">About</h4>
-        <div class="ui  link list">
-          <a href="#" class="item">Contact us</a>
-          <a href="#" class="item">Mission</a>
-          <a href="#" class="item">History</a>
-        </div>
-      </div>
-      <div class="three wide column">
-        <h4 class="ui  header">Services</h4>
-        <div class="ui  link list">
-          <a href="#" class="item">Clean Toilets</a>
-          <a href="#" class="item">Work at Costco</a>
-          <a href="#" class="item">Take a nap</a>
-        </div>
-      </div>
-      <div class="seven wide column">
-        <h4 class="ui  header">Trademark</h4>
-        <p>That photo at the top is not ours we don't <br/>even know where we got it. Seriously.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <% include ../partials/footer %>

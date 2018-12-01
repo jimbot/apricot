@@ -18,9 +18,9 @@
       <div class="left menu">
         <div class="ui secondary menu">
           <% if(!currentUser){ %>
-          <a class="item" href="/">community</a>
+          <a class="item" href="/">Community</a>
           <% } else { %>
-          <a class="item" href="/projects">community</a>
+          <a class="item" href="/projects">Community</a>
           <% } %>
         </div>
       </div>
@@ -31,8 +31,14 @@
           <a class="ui item" href="/register">Signup</a>
           <a class="ui item" href="/login">Login</a>
           <% } else { %>
+          <a class="ui item" href="/projects/pinned">
+            <i class="thumbtack icon" style="font-size:1.2em;" id="edit"></i>Pinned
+          </a>
           <a class="ui item" href="/projects/new">
-            <i class="edit icon" style="font-size:1.2em;" id="edit"></i>
+            <i class="bullhorn icon" style="font-size:1.2em;" id="edit"></i>Pitch
+          </a>
+          <a class="ui item">
+            <i class="bell outline icon" style="font-size:1.2em;" id="edit"></i>
           </a>
           <a class="ui item" href="/profile">
             <img class="ui right spaced avatar image" src="<%=currentUser.profilePicture%>">

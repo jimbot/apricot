@@ -6,7 +6,13 @@
     <!-- Render delete post form -->
     <% if(project.author.id.equals(currentUser._id)) { %>
     <form action="/projects/<%= project._id %>?_method=DELETE" id="del-form" method="POST">
-      <a><i class="right floated trash icon" style="font-size: 1.5em; color: #CCCCCC;" id="remove"></i></a>
+
+      <a class="right floated del-btn">
+        <div class="ui yellow label">
+          <i class="trash icon"></i>Delete
+        </div>
+      </a>
+
     </form>
     <% } else { %>
           <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: #CCCCCC;" id="pin"></i></a>
@@ -99,7 +105,7 @@
                 </h3>
                 <br/>
               <div class="meta">
-                <p>Pin this card to get notified when it's updated!</p>
+                <p>Pin this card to get notified for future updates!</p>
               </div>
             <% } %>
 

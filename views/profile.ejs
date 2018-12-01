@@ -1,32 +1,42 @@
 <% include ./partials/header %>
 
-<div class="ui main text container segment" style="text-align: center!important;">
-  <div class="content">
+<div>
+  <div class="ui text main container segment" style="text-align: center!important;">
+    <div class="content">
 
-    <div class="image cust_profile_picture">
-      <img src="<%=currentUser.profilePicture%>" style="margin-top: 20px; width: 40%; border-radius: 50%;">
-    </div>
-    <h3 class="ui header">
-      <%= currentUser.firstName %> <%= currentUser.lastName %>
-      <!-- <div class="meta">
-        <a class="date" style="font-size: 10pt; color:rgb(185,185,185)!important; font-weight:400!important;">@<%=currentUser.username%></a>
-      </div> -->
-      <div class="meta">
-        <a class="date" style="font-size: 10pt; color:rgb(185,185,185)!important; font-weight:400!important;">
-          last seen 2 minutes ago
-        </a>
+      <div class="image cust_profile_picture">
+        <img src="<%=currentUser.profilePicture%>" style="margin-top: 20px; width: 40%; border-radius: 50%;">
       </div>
-    </h3>
-    <a class="ui label" style="padding-right: 0">
-      <i class="mail icon"></i>
-    </a>
-    <a class="ui label" style="padding-right: 0">
-      <i class="facebook icon"></i>
-    </a>
-    <a class="ui label" style="padding-right: 0">
-      <i class="linkedin icon"></i>
-    </a>
-  </div
+      <h3 class="ui header">
+        <%= currentUser.firstName %> <%= currentUser.lastName %>
+        <div class="meta">
+          <a class="date" style="font-size: 9pt; color:rgb(185,185,185)!important; font-weight:400!important;">
+            age 22
+          </a>
+          <br/>
+          <p style="font-size: 0.7em; max-width:60%; text-align: center; margin: 0 auto;">
+            A really cool person.
+          </p>
+        </div>
+      </h3>
+      <a class="ui label" style="padding-right: 0">
+        <i class="mail icon"></i>
+      </a>
+      <a class="ui label" style="padding-right: 0">
+        <i class="facebook icon"></i>
+      </a>
+      <a class="ui label" style="padding-right: 0">
+        <i class="linkedin icon"></i>
+      </a>
+    </div
+  </div>
+</div>
+
+<div class="ui container" style="padding: 50px; text-align: center">
+  <div class="ui text">
+    <h1 class="ui header hook" style="font-size: 1.8em;">Your projects would go here.</h1>
+    <p style="font-size: 1.1em;">If you had any...</p>
+  </div>
 </div>
 
 <% include ./partials/footer %>

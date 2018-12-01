@@ -3,17 +3,22 @@
 <div class="ui main text container segment newProj">
   <div class="ui form">
     <h1 class="ui header">
-      New Project
+      New Pitch
     </h1>
     <form class="ui form" action="/projects" method="POST">
       <div class="field">
-        <input type="text" name="title" value="" placeholder="Title" required>
+        <input type="text" name="title" value="" placeholder="Title" min="5" max="25" required>
       </div>
       <div class="field">
         <select name="subject" required>
           <option value="" disabled selected>Select Category</option>
           <option value="Business">Business</option>
+          <option value="Casual">Casual</option>
+          <option value="Casual">Development</option>
           <option value="Environment">Environment</option>
+          <option value="Gaming">Gaming</option>
+          <option value="Programming">Programming</option>
+          <option value="Recreational">Recreational</option>
           <option value="Techonlogy">Technology</option>
           <option value="Volunteer">Volunteer</option>
         </select>
@@ -24,18 +29,20 @@
           <option value="" disabled selected>Select Location</option>
           <option value="Burnaby">Burnaby</option>
           <option value="Coquitlam">Coquitlam</option>
+          <option value="Maple Ridge">Maple Ridge</option>
           <option value="Richmond">Richmond</option>
           <option value="Surrey">Surrey</option>
           <option value="Vancouver">Vancouver</option>
+          <option value="White Rock">White Rock</option>
         </select>
       </div>
 
       <div class="field">
-        <textarea class="projectDesc" name="description" placeholder="Describe what your project or idea is about"
-          rows="5" style="resize: none; line-height: 150%;" maxlength="350" required></textarea>
+        <textarea class="projectDesc" name="description" placeholder="Pitch your brilliant idea!"
+          rows="5" style="resize: none; line-height: 150%;" min="50" maxlength="250" required></textarea>
       </div>
       <button class="ui primary submit button">
-        Create Project
+        Post
       </button>
     </form>
     <br/>

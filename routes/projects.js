@@ -27,6 +27,11 @@ router.get("/new", isLoggedIn, function(req, res){
   res.render("projects/new");
 });
 
+// all pinned projects
+router.get("/pinned", isLoggedIn, function(req, res){
+  res.render("projects/pinned");
+});
+
 // create ROUTE
 router.post("/", function(req, res){
   var title = req.body.title;
@@ -60,10 +65,6 @@ router.get("/:id", function(req, res){
       res.render("projects/show", {project: foundProject});
     }
   });
-});
-
-router.get("/pinned", function(req, res){
-  res.render("projects/pinned");
 });
 
 // DELETE ROUTE
