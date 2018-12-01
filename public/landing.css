@@ -1,8 +1,21 @@
-.ui.primary.menu {
+div.ui.primary.menu {
   padding: 10px;
   margin-bottom: none;
   position: fixed;
   width: 100%;
+  background-color:rgb(84,156,233) !important;
+  box-shadow: none!important;
+  border-bottom: none!important;
+}
+
+#login {
+  background-color: rgb(242,112,28)!important;
+  border-radius: 2em;
+  box-shadow: 0 2px 2px 0 rgba(34,36,38,.15);
+}
+
+a.item {
+  color: white!important;
 }
 
 .ui.menu .item:before {
