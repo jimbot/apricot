@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="/landing.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
   </div>
 
   <div class="container">
-    <img src="https://i.imgur.com/l8XQw02.jpg" alt="" style="width: 100%; margin-top: 50px;">
+    <img src="https://i.imgur.com/l8XQw02.jpg" alt="" style="width: 100%; margin-top: 55px;">
 
     <div class="ui text">
       <h3 class="ui header hook">Pitch, Build <br/> and Collaborate</h3>
@@ -56,7 +57,7 @@
           <div class="ui inverted link list">
             <a href="#" class="item">Clean Toilets</a>
             <a href="#" class="item">Work at Costco</a>
-            <a href="#" class="item">Take a nap</a>
+            <a href="#" class="item">Skip Java</a>
           </div>
         </div>
         <div class="seven wide column">
@@ -66,6 +67,16 @@
       </div>
     </div>
   </div>
+
+<script>
+
+
+  $( window ).scroll(function() {
+    $("div.ui.primary.menu").css("box-shadow", "0 1px 2px 0 rgba(34, 36, 38, .15)");
+    $("div.ui.primary.menu").css("border-bottom", "1px solid rgba(34,36,38,.15)");
+  });
+
+</script>
 
 </body>
 </html>

@@ -4,8 +4,8 @@ div.ui.primary.menu {
   position: fixed;
   width: 100%;
   background-color:rgb(84,156,233) !important;
-  box-shadow: none!important;
-  border-bottom: none!important;
+  box-shadow: none;
+  border-bottom: none;
 }
 
 #login {

@@ -7,12 +7,18 @@ var UserSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     profilePicture: String,
-    pinnedProjects: {
-      id: {
+    pinnedProjects: [
+      {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "PinnedProjects"
+        ref: "Project"
       }
-    }
+    ],
+    project: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Project"
+      }
+    ]
 });
 
 // take passport local mongoose package and add methods to our user schema
