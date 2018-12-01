@@ -3,7 +3,7 @@ body {
 }
 
 div.ui.card.container {
-  width: 500px;
+  width: 625px;
   border: none!important;
   margin-bottom: 25px;
 }
@@ -15,7 +15,7 @@ div.ui.main.text.container.segment.log_reg_box {
 }
 
 div.ui.main.text.container.segment.newProj {
-  width: 500px;
+  width: 600px;
   padding: 30px;
   border: none!important;
 }
