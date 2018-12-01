@@ -6,16 +6,70 @@
   <title>Apricot</title>
   <link rel="stylesheet" type="text/css" href="/landing.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/dropdown.min.css">
 </head>
 
 <body>
 
-  <div class="landing-photo">
-    <img src="/test-picture.jpg" alt="">
+  <div class="ui primary menu">
+    <div class="ui container">
+
+
+      <div class="left menu">
+        <div class="ui secondary menu">
+          <% if(!currentUser){ %>
+          <a class="item" href="/">community</a>
+          <% } else { %>
+          <a class="item" href="/projects">Community</a>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="right menu">
+        <div class="ui secondary menu">
+          <a class="ui item" href="/register">signup</a>
+          <a class="ui item" href="/login">login</a>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <div class="container">
+    <img src="https://i.imgur.com/l8XQw02.jpg" alt="" style="width: 100%; margin-top: 50px;">
 
+    <div class="ui text">
+      <h3 class="ui header hook">Pitch, Build <br/> and Collaborate</h3>
+      <p style="font-size: 1.7em;">with like minded individuals in your Community, today.</p>
+      <a href="/register" class="ui primary large button">Get Started</a>
+    </div>
+  </div>
 
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container foot">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Contact us</a>
+            <a href="#" class="item">Mission</a>
+            <a href="#" class="item">History</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Services</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Clean Toilets</a>
+            <a href="#" class="item">Work at Costco</a>
+            <a href="#" class="item">Take a nap</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Trademark</h4>
+          <p>That photo at the top is not ours we don't <br/>even know where we got it. Seriously.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-  <% include ./partials/footer %>
+</body>
+</html>

@@ -115,6 +115,10 @@ div.ui.main.text.container.segment {
   color: rgb(65, 131, 196)!important;
 }
 
+.ui.container.foot {
+  padding: 20px;
+}
+
 /* SELECT */
 
 select {

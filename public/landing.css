@@ -1,11 +1,8 @@
-div.ui.large.top.fixed.menu {
+.ui.primary.menu {
   padding: 10px;
-  box-shadow: none;
-  border: none;
-}
-
-a.ui.primary.button {
-  border-radius: 2em;
+  margin-bottom: none;
+  position: fixed;
+  width: 100%;
 }
 
 .ui.menu .item:before {
@@ -16,7 +13,15 @@ a.item {
   border-left: #fff !important;
 }
 
-.landing-photo img {
-  position: relative;
-  width: 100%;
+.ui.text {
+  padding-left: 100px;
+  padding-bottom: 100px;
+}
+
+.ui.header.hook {
+  font-size: 4em;
+}
+
+.ui.container.foot {
+  padding: 20px;
 }
