@@ -65,9 +65,9 @@ i.plus.circle.icon {
   font-size: 12pt;
 }
 
-button.ui.primary.submit.button {
+/* button.ui.primary.submit.button {
   border-radius: 2em;
-}
+} */
 
 .ui.menu .item:before {
     background: #fff !important;
