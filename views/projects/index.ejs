@@ -45,10 +45,9 @@
       </p>
     </div>
   </div>
-  <div class="extra content">
+  <div class="extra content" style="border-top: none!important;">
     <span class="left floated">
-      <a class="ui image label" href="/profile/<%=project.author.id%>">
-        <img src="<%=project.author.profilePicture%>">
+      <a class="ui label" href="/profile/<%=project.author.id%>">
         <%= project.author.username %>
       </a>
       <a href="/projects/<%=project._id%>">
