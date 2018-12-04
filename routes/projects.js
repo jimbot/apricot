@@ -35,10 +35,24 @@ router.post("/pin/:id", isLoggedIn, function(req, res){
     if(err){
       console.log(err);
     } else {
-      req.user.pinnedProjects.push(project);
-      req.user.save();
-      res.redirect("/projects");
-      console.log(req.user.pinnedProjects);
+        // if(req.user.pinnedProjects.length != 0){
+        //   for(var i = 0; i < req.user.pinnedProjects.length; i++){
+        //     if(req.user.pinnedProjects[i].equals(project.id)){
+        //       res.redirect("/projects");
+        //       console.log("project nod added");
+        //     }
+        //   }
+        // } else {
+        //     req.user.pinnedProjects.push(project);
+        //     req.user.save();
+        //     res.redirect("/projects");
+        //     console.log("project added: " + req.user.pinnedProjects);
+        // }
+          console.log(project);
+          req.user.pinnedProjects.push(project);
+          req.user.save();
+          res.redirect("/projects");
+          console.log("project added: " + req.user.pinnedProjects);
     }
   });
 });
@@ -62,7 +76,14 @@ router.post("/", function(req, res){
     if(err){
       res.render("new");
     } else {
-      res.redirect("/projects")
+      // $set mongo syntax
+      // User usr = new User();
+      // usr = req.user;
+
+      // req.user.createdProjects.push(newProject);
+      // req.user.save();
+      // console.log(req.user.createdProjects);
+      res.redirect("/projects");
     }
   });
 });

@@ -13,7 +13,7 @@ var UserSchema = new mongoose.Schema({
         ref: "Project"
       }
     ],
-    project: [
+    createdProjects: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Project"
