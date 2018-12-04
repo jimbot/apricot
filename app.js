@@ -54,11 +54,11 @@ app.use(updateRoutes);
 
 //keep at bottom
 // heroku server
-// app.listen(process.env.PORT || 5000, function(){
-//   console.log("This is for Heroku only");
-// });
+app.listen(process.env.PORT || 5000, function(){
+  console.log("This is for Heroku only");
+});
 
 // for debugging
-app.listen(3000, function(){
-  console.log("listening on localhost: 3000");
-});
+// app.listen(3000, function(){
+//   console.log("listening on localhost: 3000");
+// });
