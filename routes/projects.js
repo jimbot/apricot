@@ -3,16 +3,6 @@ var router = express.Router();
 var Project = require("../models/project")
 
 // HOME PAGE
-// router.get("/", function(req, res){
-//   Project.find({}, function(err, projects){
-//     if(err){
-//       console.log(err);
-//     } else {
-//       res.render("projects/index", {projects: projects});
-//     }
-//   });
-// });
-
 router.get("/", function(req, res){
   Project.find({}).populate("updates").exec(function(err, projects){
     if(err){
@@ -29,7 +19,28 @@ router.get("/new", isLoggedIn, function(req, res){
 
 // all pinned projects
 router.get("/pinned", isLoggedIn, function(req, res){
-  res.render("projects/pinned");
+  Project.find({}).populate("updates").exec(function(err, projects){
+    if(err){
+      console.log(err);
+    } else {
+      res.render("projects/pinned", {projects: projects});
+    }
+  });
+  // res.render("projects/pinned");
+});
+
+// get the pin request
+router.post("/pin/:id", isLoggedIn, function(req, res){
+  Project.findById(req.params.id, function(err, project){
+    if(err){
+      console.log(err);
+    } else {
+      req.user.pinnedProjects.push(project);
+      req.user.save();
+      res.redirect("/projects");
+      console.log(req.user.pinnedProjects);
+    }
+  });
 });
 
 // create ROUTE
@@ -57,6 +68,7 @@ router.post("/", function(req, res){
 });
 
 // SHOW
+// Project Details
 router.get("/:id", function(req, res){
   Project.findById(req.params.id).populate("comments").populate("updates").exec(function(err, foundProject){
     if(err){

@@ -16,18 +16,18 @@
       $(this).css('color', 'color: rgba(0,0,0,.87) !important');
     });
 
+    // gets the delete form button
+    var form = document.getElementById("del-form");
+    // listend for the delete form button
+    $(".right.floated.del-btn").click(function(){
+      form.submit();
+    });
+
+    //
+    var form = document.getElementById("addProject");
+    // submit the pin project form
     $(".right.floated.thumbtack.icon").click(function(){
       $(this).css("color", "rgb(65, 131, 196)");
-    });
-
-    $(".right.floated.thumbtack.icon").click(function(){
-      // console.log(currentUser._id);
-      console.log(currentUser);
-    });
-
-    var form = document.getElementById("del-form");
-
-    $(".right.floated.del-btn").click(function(){
       form.submit();
     });
 

@@ -3,7 +3,7 @@
 <div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
   <div class="content">
 
-    <!-- Render delete post form -->
+    <!-- Render delete icon form if current user owns the post -->
     <% if(project.author.id.equals(currentUser._id)) { %>
     <form action="/projects/<%= project._id %>?_method=DELETE" id="del-form" method="POST">
 
@@ -14,6 +14,7 @@
       </a>
 
     </form>
+    <!-- render the thumbtack icon -->
     <% } else { %>
           <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: #CCCCCC;" id="pin"></i></a>
     <% } %>

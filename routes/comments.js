@@ -4,16 +4,6 @@ var Project = require("../models/project");
 var Comment = require("../models/comment");
 
 // COMMENTS
-// app.get("/projects/:id/comments/new", function(req, res){
-//   Project.findById(req.params.id, function(err, project){
-//     if(err){
-//       console.log(err);
-//     } else {
-//       res.render("comments/new", {project: project});
-//     }
-//   });
-// });
-
 router.post("/projects/:id/comments", isLoggedIn, function(req, res){
   Project.findById(req.params.id, function(err, project){
     if(err){

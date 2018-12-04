@@ -1,10 +1,108 @@
 <% include ../partials/header %>
 
-<div class="ui container" style="padding: 50px; text-align: center">
-  <div class="ui text">
-    <h1 class="ui header hook" style="font-size: 2.5em;">Hmm, no projects here.</h1>
-    <p style="font-size: 1.2em;">Pin a project from the home page.</p>
-  </div>
-</div>
+<% if (currentUser.pinnedProjects.length == 0) { %>
+    <div class="ui container" style="padding: 50px; text-align: center">
+      <div class="ui text">
+        <h1 class="ui header hook" style="font-size: 2.5em;">Hmm, no projects here.</h1>
+        <p style="font-size: 1.2em;">Pin a project from the home page.</p>
+      </div>
+    </div>
+<% } %>
+
+<% for(var i=0; i < projects.length; i++){ %>
+  <% for(var j=0; j < currentUser.pinnedProjects.length; j++){ %>
+    <% if(projects[i]._id.equals(currentUser.pinnedProjects[j])){ %>
+
+      <div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
+        <div class="content">
+            <form id="addProject" action="/projects/pin/<%=projects[i]._id%>" method="POST">
+              <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: rgb(84,156,233);" id="pin"></i></a>
+            </form>
+          <div class="header">
+            <a class="ui header" href="/projects/<%=projects[i]._id%>">
+              <%=projects[i].title%>
+            </a>
+          </div>
+          <div class="meta">
+            <a>
+              <%=projects[i].subject%></a>
+            <br/>
+            <a>
+              <%=projects[i].location%></a>
+          </div>
+          <div class="description">
+            <p>
+              <%=projects[i].description%>
+            </p>
+          </div>
+        </div>
+        <div class="extra content" style="border-top: none!important;">
+          <span class="left floated">
+            <a class="ui label" href="/profile/<%=projects[i].author.id%>">
+              <%= projects[i].author.username %>
+            </a>
+            <a href="/projects/<%=projects[i]._id%>">
+              <div class="ui label">
+                <i class="comment icon"></i>
+                <% if(projects[i].comments.length > 0){ %>
+                  <%= projects[i].comments.length %>
+                <% } %>
+              </div>
+            </a>
+          </span>
+          <span class="right floated">
+            <%= moment(projects[i]._id.createdAt).fromNow() %>
+          </span>
+        </div>
+
+        <!-- Only render bottom button if the post has been updated by the creator -->
+        <% if(projects[i].updates.length > 0) { %>
+          <div class="ui bottom button">
+            <div class="ui accordion">
+              <div class="title">
+                <span style="color: #707070">updates</span>
+                <i class="caret down icon" style="color:#707070"></i>
+              </div>
+              <div class="content" style="text-align: left; font-weight: normal">
+                <div class="ui vertical segment">
+                  <div class="header">
+                    <h3 class="ui dividing header">
+                      Updates
+                    </h3>
+                    <br/>
+                    <!-- Render the updates -->
+                    <div class="content">
+                      <% projects[i].updates.reverse().forEach(function(update){ %>
+                      <div class="ui comments">
+                        <div class="comment">
+                          <div class="content">
+                            <a class="author">
+                              <%= update.author.username %></a>
+                            <div class="metadata date_commented">
+                              <span class="date">
+                                <%= moment(update.createdAt).fromNow() %>
+                              </span>
+                            </div>
+                            <div class="text">
+                              <%= update.text %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <% }) %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+
+    <% } %>
+  <% } %>
+<% } %>
+
+
 
 <% include ../partials/footer %>

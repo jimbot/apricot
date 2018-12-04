@@ -1,5 +1,6 @@
 <% include ../partials/header %>
 
+<!-- Search bar at the top -->
 <div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
   <div id="searchBar" class="item">
     <div class="ui small icon input" style="width:100%!important;">
@@ -14,17 +15,17 @@
 <% projects.reverse().forEach(function(project){ %>
 <div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
   <div class="content">
-    <!-- Render edit post form -->
+    <!-- Render edit post form if project is created by author-->
     <% if(project.author.id.equals(currentUser._id)) { %>
-
           <a class="right floated" href="/projects/<%=project._id%>">
             <div class="ui blue label">
               <i class="edit icon"></i>Edit
             </div>
           </a>
     <% } else { %>
-      <form id="addProject">
-            <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: rgb(204, 204, 204);" id="pin"></i></a>
+      <!-- add a pin icon if the project is made by another user -->
+      <form id="addProject" action="/projects/pin/<%=project._id%>" method="POST">
+        <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: rgb(204, 204, 204);" id="pin"></i></a>
       </form>
     <% } %>
     <div class="header">
@@ -109,8 +110,10 @@
 </div>
 <% }) %>
 
+<!-- divides content from footer -->
 <div class="ui divider"></div>
 
+<!-- footer -->
 <div class="ui  vertical footer segment">
   <div class="ui container foot">
     <div class="ui stackable  divided equal height stackable grid">
