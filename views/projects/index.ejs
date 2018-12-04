@@ -61,7 +61,7 @@
       </a>
     </span>
     <span class="right floated">
-      <%= moment(project._id.createdAt).fromNow() %>
+      <%= moment(project.created).fromNow() %>
     </span>
   </div>
 
@@ -90,7 +90,7 @@
                         <%= update.author.username %></a>
                       <div class="metadata date_commented">
                         <span class="date">
-                          <%= moment(update.createdAt).fromNow() %>
+                          <%= moment(update.created).fromNow() %>
                         </span>
                       </div>
                       <div class="text">

@@ -21,7 +21,7 @@ var app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(methodOverride('_method'));
-//require moment
+//require moment for time stamps
 app.locals.moment = require('moment');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -46,16 +46,19 @@ app.use(function(req, res, next){
   next();
 });
 
+// for routes folder
 app.use("/", indexRoutes);
 app.use("/projects", projectRoutes);
 app.use(commentRoutes);
 app.use(updateRoutes);
 
 //keep at bottom
+// heroku server
 app.listen(process.env.PORT || 5000, function(){
   console.log("This is for Heroku only");
 });
 
+// for debugging
 // app.listen(3000, function(){
 //   console.log("listening on localhost: 3000");
 // });

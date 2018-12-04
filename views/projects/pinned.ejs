@@ -9,6 +9,7 @@
     </div>
 <% } %>
 
+<!-- show different color 'pin' icons depending on whether or not the project is pinned -->
 <% projects.reverse().forEach(function(project){ %>
   <% for(var j=0; j < currentUser.pinnedProjects.length; j++){ %>
     <% if(project._id.equals(currentUser.pinnedProjects[j])){ %>
@@ -36,6 +37,7 @@
             </p>
           </div>
         </div>
+        <!-- Comment section, display a comment counter for posts with comments > 0 -->
         <div class="extra content" style="border-top: none!important;">
           <span class="left floated">
             <a class="ui label" href="/profile/<%=project.author.id%>">

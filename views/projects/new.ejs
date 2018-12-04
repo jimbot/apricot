@@ -10,6 +10,7 @@
         <input type="text" name="title" value="" placeholder="Title" min="5" max="25" required>
       </div>
       <div class="field">
+        <!-- Fixed user input for subject field -->
         <select name="subject" required>
           <option value="" disabled selected>Select Category</option>
           <option value="Business">Business</option>
@@ -23,7 +24,7 @@
           <option value="Volunteer">Volunteer</option>
         </select>
       </div>
-
+      <!-- fixed input for location field -->
       <div class="field">
         <select name="location" required>
           <option value="" disabled selected>Select Location</option>
@@ -37,6 +38,7 @@
         </select>
       </div>
 
+      <!-- maxiumum entry of 250 character -->
       <div class="field">
         <textarea class="projectDesc" name="description" placeholder="Pitch your brilliant idea!"
           rows="5" style="resize: none; line-height: 150%;" min="50" maxlength="250" required></textarea>
