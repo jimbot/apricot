@@ -9,54 +9,54 @@
     </div>
 <% } %>
 
-<% for(var i=0; i < projects.length; i++){ %>
+<% projects.reverse().forEach(function(project){ %>
   <% for(var j=0; j < currentUser.pinnedProjects.length; j++){ %>
-    <% if(projects[i]._id.equals(currentUser.pinnedProjects[j])){ %>
+    <% if(project._id.equals(currentUser.pinnedProjects[j])){ %>
 
       <div class="ui card container" style="box-shadow: 0 1px 5px 0 #d9d9d9, 0 0 0 0px #d9d9d9;">
         <div class="content">
-            <form id="addProject" action="/projects/pin/<%=projects[i]._id%>" method="POST">
+            <form id="addProject" action="/projects/pin/<%=project._id%>" method="POST">
               <a><i class="right floated thumbtack icon" style="font-size: 1.5em; color: rgb(84,156,233);" id="pin"></i></a>
             </form>
           <div class="header">
-            <a class="ui header" href="/projects/<%=projects[i]._id%>">
-              <%=projects[i].title%>
+            <a class="ui header" href="/projects/<%=project._id%>">
+              <%=project.title%>
             </a>
           </div>
           <div class="meta">
             <a>
-              <%=projects[i].subject%></a>
+              <%=project.subject%></a>
             <br/>
             <a>
-              <%=projects[i].location%></a>
+              <%=project.location%></a>
           </div>
           <div class="description">
             <p>
-              <%=projects[i].description%>
+              <%=project.description%>
             </p>
           </div>
         </div>
         <div class="extra content" style="border-top: none!important;">
           <span class="left floated">
-            <a class="ui label" href="/profile/<%=projects[i].author.id%>">
-              <%= projects[i].author.username %>
+            <a class="ui label" href="/profile/<%=project.author.id%>">
+              <%= project.author.username %>
             </a>
-            <a href="/projects/<%=projects[i]._id%>">
+            <a href="/projects/<%=project._id%>">
               <div class="ui label">
                 <i class="comment icon"></i>
-                <% if(projects[i].comments.length > 0){ %>
-                  <%= projects[i].comments.length %>
+                <% if(project.comments.length > 0){ %>
+                  <%= project.comments.length %>
                 <% } %>
               </div>
             </a>
           </span>
           <span class="right floated">
-            <%= moment(projects[i]._id.createdAt).fromNow() %>
+            <%= moment(project._id.createdAt).fromNow() %>
           </span>
         </div>
 
         <!-- Only render bottom button if the post has been updated by the creator -->
-        <% if(projects[i].updates.length > 0) { %>
+        <% if(project.updates.length > 0) { %>
           <div class="ui bottom button">
             <div class="ui accordion">
               <div class="title">
@@ -72,7 +72,7 @@
                     <br/>
                     <!-- Render the updates -->
                     <div class="content">
-                      <% projects[i].updates.reverse().forEach(function(update){ %>
+                      <% project.updates.reverse().forEach(function(update){ %>
                       <div class="ui comments">
                         <div class="comment">
                           <div class="content">
@@ -101,7 +101,7 @@
 
     <% } %>
   <% } %>
-<% } %>
+<% }) %>
 
 
 
