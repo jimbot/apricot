@@ -55,7 +55,7 @@ app.use(updateRoutes);
 //keep at bottom
 // heroku server
 app.listen(process.env.PORT || 5000, function(){
-  console.log("This is for Heroku only");
+  console.log("Heroku server updated.");
 });
 
 // for debugging
