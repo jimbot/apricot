@@ -1,6 +1,6 @@
 # apricot
 
-website: https://pure-savannah-67727.herokuapp.com/
+website: http://community-collab.herokuapp.com
 github repo: https://github.com/jimbot/apricot
 
 Models Folder: Mongo Schemas
