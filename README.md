@@ -5,7 +5,7 @@ A web app to allow members of the community to pitch project ideas, respond to p
 The web app was the Group 11's final project for BCIT's Fall 2018's 1930 projects course.
 
 website: https://collabo-app.herokuapp.com
-github repo: https://github.com/jimbot/apricot
+github repo: https://github.com/jimbot/collabo
 
 ## Authors
 
