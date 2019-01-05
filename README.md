@@ -1,4 +1,4 @@
-# apricot
+# Community
 
 A web app to allow members of the community to pitch project ideas, respond to pitches, and collaborate with like-minded indivudals. 
 
