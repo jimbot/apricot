@@ -1,15 +1,15 @@
 # Collabo  
 
-**Sign in with**
-* Username: guest
-* Password: guest
-
 A web app to allow members of the community to pitch project ideas, respond to pitches, and collaborate with like-minded indivudals. 
 
 The web app was the Group 11's final project for BCIT's Fall 2018's 1930 projects course.
 
 website: https://collabo-app.herokuapp.com
 github repo: https://github.com/jimbot/collabo
+
+**Sign in with**
+* Username: guest
+* Password: guest
 
 ## Authors
 
