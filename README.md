@@ -37,5 +37,3 @@ github repo: https://github.com/jimbot/collabo
 **NPM Packages used**
 * EJS, express, mongoose, body-parser, moment.js
 * passport.js (for authentication and security)
-
-app.js starting point for server
