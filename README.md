@@ -7,15 +7,9 @@ Collabo follow RESTful routing conventions and implements CRUD to allow users to
 website: https://collabo-app.herokuapp.com
 github repo: https://github.com/jimbot/collabo
 
-**Sign in with**
+**Quick Sign In**
 * Username: guest
 * Password: guest
-
-## Authors
-
-* **James Chen** - [jimbot](https://github.com/jimbot)
-* **Zafir Damani** - [zafird](https://github.com/zafird)
-* **Kevin Chung** - [kchung90](https://github.com/kchung90)
 
 ## Technicals
 
@@ -37,3 +31,9 @@ github repo: https://github.com/jimbot/collabo
 **NPM Packages used**
 * EJS, express, mongoose, body-parser, moment.js
 * passport.js (for authentication and security)
+
+## Authors
+
+* **James Chen** - [jimbot](https://github.com/jimbot)
+* **Zafir Damani** - [zafird](https://github.com/zafird)
+* **Kevin Chung** - [kchung90](https://github.com/kchung90)
