@@ -2,8 +2,6 @@
 
 Collabo is a social web application that simplifies the collaboration process. Our goal is to allow users to pitch project ideas and work with like-minded indivudals within their community.
 
-Collabo follows RESTful routing conventions and implements CRUD to allow users to manage Posts, Updates, and Comments.
-
 **website** https://collabo-app.herokuapp.com
 
 **Quick Sign In**
@@ -11,6 +9,8 @@ Collabo follows RESTful routing conventions and implements CRUD to allow users t
 * Password: guest
 
 ## Technical Specifications
+
+Collabo follows RESTful routing conventions and implements CRUD to allow users to manage Posts, Updates, and Comments.
 
 **Public Folder** CSS files  
 
