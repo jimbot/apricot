@@ -1,8 +1,8 @@
 # Collabo  
 
-A web app to allow members of the community to pitch project ideas, respond to pitches, and collaborate with like-minded indivudals. 
+Collabo is a social web application that simplifies the collaboration process. Our goal is to allow users to pitch project ideas and work with like-minded indivudals within their community.
 
-The web app was the Group 11's final project for BCIT's Fall 2018's 1930 projects course.
+Collabo follow RESTful routing conventions and implements CRUD to allow users to manage their posts.
 
 website: https://collabo-app.herokuapp.com
 github repo: https://github.com/jimbot/collabo
@@ -19,9 +19,23 @@ github repo: https://github.com/jimbot/collabo
 
 ## Technicals
 
-Models Folder: Mongo Schemas  
-Public Folder: CSS files  
-Routes Folder: Handles GET, POST and DELETE requests  
-Views Folder: .ejs files that render all web pages  
+**Public Folder** CSS files  
+
+**Views Folder** .ejs files that render all web pages  
+
+**Models Folder** 
+* Mongo Schemas
+* Embedded data
+* Project Schema references Comments Schema and Update Schema
+* User Schema references their own Projects and is referenced by Update, Project, and Comment Schemas
+
+**Routes Folder** 
+* Handles GET, POST and DELETE requests  
+* Use of Middleware to check if current User is logged in to determine whether or not they can POST
+* Middleware to check author of current Project before they can DELETE
+
+**NPM Packages used**
+* EJS, express, mongoose, body-parser, moment.js
+* passport.js (for authentication and security)
 
 app.js starting point for server
