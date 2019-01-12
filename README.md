@@ -1,8 +1,8 @@
 # Collabo  
 
-Sign in with:
-Username: guest
-Password: guest
+**Sign in with**
+*Username: guest
+*Password: guest
 
 A web app to allow members of the community to pitch project ideas, respond to pitches, and collaborate with like-minded indivudals. 
 
