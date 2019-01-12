@@ -23,9 +23,9 @@ Collabo follows RESTful routing conventions and implements CRUD to allow users t
 * User Schema references their own Projects and is referenced by Update, Project, and Comment Schemas
 
 **Routes Folder** 
-* Handles GET, POST and DELETE requests  
-* Use of Middleware to check if current User is logged in to determine whether or not they can POST
-* Middleware to check author of current Project before they can DELETE
+* Handles and renders all user requests
+* Middleware used to check if current User is logged in to determine whether or not they can make POST requests
+* Middleware to check author of current Project before they make a DELETE request
 
 **NPM Packages used**
 * EJS, express, mongoose, body-parser, moment.js
