@@ -36,3 +36,5 @@ Collabo follows RESTful routing conventions and implements CRUD to allow users t
 * **James Chen** - [jimbot](https://github.com/jimbot)
 * **Zafir Damani** - [zafird](https://github.com/zafird)
 * **Kevin Chung** - [kchung90](https://github.com/kchung90)
+* **Tanush Verma** - [TanushParkashVerma](https://github.com/TanushParkashVerma)
+
